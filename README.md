@@ -23,7 +23,7 @@ xxxxxxxxxxx
 #
 
 <h4 align="left">👥 Integrantes:</h4>
-<p>Malu de Faria Neves Bezerra...</p>
+<p>Malu de Faria Neves Bezerra</p>
 <p>Nunno Wakiyama Diniz Carvalho</p>
 <p>Pablo Felipe dos Santos</p>
 <p>Pedro Alves dos Santos </p>
