@@ -6,7 +6,7 @@
 
 #
 
-<h3 align="left">Resumo do projeto:</h3>
+<h3 align="left">📝 Resumo do projeto:</h3>
 <p>xxxxxxxxxxxxxxxxxx.</p>
 <p>xxxxxxxxxxxxxxxxxxx</p>
 xxxxxxxxxxx
