@@ -6,33 +6,38 @@
 
 #
 
-<h3 align="left">📝 Resumo do projeto:</h3>
-<p>Problema: Ana é médica e atua atendendo pacientes em uma emergência pediátrica da rede de saúde pública de Pernambuco. Durante as consultas, ela percebeu que perdia muito tempo criando receituários manualmente durante o tempo de consulta. Isso começou a se tornar um problema porque muitas das consultas são com pessoas apresentando os mesmos sintomas e sendo diagnosticadas com as mesmas doenças ou doenças com prognóstico parecido/equivalente. Consequentemente, Ana escreve praticamente os mesmos receituários 12, 15 vezes ao dia, tornando as consultas cansativas e, por mais que pouco, suscetíveis a falha médica. </p>
-<p>Solução: Diante dessa situação e após algumas reuniões com Ana para levantamento de informações, foi decidido criar um sistema WEB para geração automática de receituários em emergências pediátricas em UPAs - PE. É importante ressaltar que o receituário é feito durante o tempo de consulta.</p>
-<p>Os receituários: Antes de explicar como funciona, é necessário explicar como se constrói um receituário. Refere-se à um documento que prescreve medicamentos, tratamentos e orientações para pacientes. Segue um modelo de receituário genérico: .</p>
-<p>O objetivo do sistema é preenchê-lo com as informações já mencionadas: medicamento(s), tratamentos(s) e orientações. Intuitivamente, os receituários mudam de acordo com o diagnóstico. </p>
-<p>Como funciona: Durante a consulta, após o diagnóstico do paciente, o médico acessaria o site e, após cadastro/login, preencheria os campos: 
+🩺 Sistema de Receituário - UPA Emergência Pediátrica
+📌 Visão Geral
+Este projeto é um sistema web desenvolvido para gerar automaticamente receituários médicos durante atendimentos em emergências pediátricas da rede pública de saúde (UPA - PE). A iniciativa nasceu da necessidade de otimizar o tempo dos profissionais, reduzir erros e melhorar a qualidade do atendimento.
 
-  *CID10(Classificação Internacional de Doenças, a décima revisão. Publicada pela Organização Mundial da Saúde (OMS), trata-se de um sistema de códigos alfanuméricos que permite identificar doenças, sintomas e outros problemas de saúde). 
+🚨 Problema Identificado
+Médicos como Ana, atuando em emergências, gastam tempo excessivo escrevendo receituários repetitivos para doenças comuns. Isso atrasa atendimentos, aumenta o cansaço e abre margem para erros.
 
-  *IDADE 
+✅ Solução Proposta
+Desenvolvimento de uma plataforma online onde o médico, após login, preenche os campos:
 
-  *PESO(Kg) 
+CID-10 (diagnóstico)
 
- 
+Idade do paciente
 
-Com os campos preenchidos, nosso sistema automaticamente gera receituários pré-prontos, fornecendo opções de escolha e, caso o médico em questão prefira/necessite, receituários limpos. </p>
-<p>Implicações: Com o sistema funcionando, uma série de benefícios são alcançados: 
+Peso
 
-Tempo de consulta reduzido, permitindo o médico atender mais pessoas. 
+Com isso, o sistema gera automaticamente:
 
-Falha médica improvável, já que o sistema seria responsável por fazer todos os cálculos necessários. 
+Receituários pré-prontos (com base em padrões de tratamento)
 
-Melhor prognóstico. 
+Receituários em branco (caso o médico prefira personalizar)
 
-Melhora na qualidade de trabalho. 
+🎯 Benefícios
+Redução significativa no tempo de consulta
 
-Maior atenção ao paciente. </p>
+Diminuição de falhas médicas
+
+Aumento na atenção ao paciente
+
+Melhoria da rotina de trabalho médica
+
+Possibilidade de atender mais pacientes
 
 
 #
