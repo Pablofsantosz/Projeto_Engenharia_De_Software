@@ -6,39 +6,74 @@
 
 #
 
-🩺 Sistema de Receituário - UPA Emergência Pediátrica
-📌 Visão Geral
-Este projeto é um sistema web desenvolvido para gerar automaticamente receituários médicos durante atendimentos em emergências pediátricas da rede pública de saúde (UPA - PE). A iniciativa nasceu da necessidade de otimizar o tempo dos profissionais, reduzir erros e melhorar a qualidade do atendimento.
+<h3>🩺 Sistema de Receituário - UPA Emergência Pediátrica</h3>
 
-🚨 Problema Identificado
-Médicos como Ana, atuando em emergências, gastam tempo excessivo escrevendo receituários repetitivos para doenças comuns. Isso atrasa atendimentos, aumenta o cansaço e abre margem para erros.
+<p> - </p>
 
-✅ Solução Proposta
-Desenvolvimento de uma plataforma online onde o médico, após login, preenche os campos:
+<p><h4>📌 Visão Geral</h4> Este projeto é um sistema web desenvolvido para gerar automaticamente receituários médicos durante atendimentos em emergências pediátricas da rede pública de saúde (UPA - PE). A iniciativa nasceu da necessidade de otimizar o tempo dos profissionais, reduzir erros e melhorar a qualidade do atendimento.</p>
 
-CID-10 (diagnóstico)
+<p> - </p>
 
-Idade do paciente
+<p><h4>🚨 Problema:</h4> Ana atua na linha de frente do atendimento em uma emergência pediátrica da rede pública de saúde do estado de Pernambuco. Durante a rotina, observou que dedicava uma parte significativa do tempo de consulta à elaboração manual de receituários. Atividade que embora essencial, revelou-se ineficiente diante da recorrência de casos clínicos semelhantes.</p>
+  
+<p><i>(Pacientes com sintomas e diagnósticos repetitivos ou de prognóstico equivalente).</i></p>
 
-Peso
+<p>Consequentemente, Ana escreve praticamente os mesmos receituários 12, 15 vezes ao dia, tornando as consultas cansativas e, por mais que pouco, suscetíveis a falha médica.</p>
 
-Com isso, o sistema gera automaticamente:
+<p> - </p>
 
-Receituários pré-prontos (com base em padrões de tratamento)
+<p><h4>✅ Solução: </h4>Diante dessa situação e após algumas reuniões com Ana para levantamento de informações, foi decidido criar um sistema WEB para geração automática de receituários em emergências pediátricas em UPAs - PE. <b>É importante ressaltar que o receituário é feito durante o tempo de consulta.</b></p>
 
-Receituários em branco (caso o médico prefira personalizar)
+<p> - </p>
 
-🎯 Benefícios
-Redução significativa no tempo de consulta
+<p><h4>📝 Os receituários: </h4></p> 
 
-Diminuição de falhas médicas
+<b>(Antes de explicar como funciona, é necessário explicar como se constrói um receituário)</b>
+<p>Refere-se à um documento que prescreve medicamentos, tratamentos e orientações para pacientes. O objetivo do sistema é preenchê-lo com as devidas informações: </p>
 
-Aumento na atenção ao paciente
+<ul>
+  <li> <b>Medicamento(s);</b></li>
+  <li> <b>Tratamentos(s);</b></li>
+  <li> <b>Orientações</b>;</li>
+</ul>
 
-Melhoria da rotina de trabalho médica
+<p>Intuitivamente, os receituários mudam de acordo com o diagnóstico.</p>
 
-Possibilidade de atender mais pacientes
+<p> - </p>
 
+<p><h4>✅ Como funciona: </h4>Durante a consulta, após o diagnóstico do paciente, o médico acessaria o site e, após cadastro/login, preencheria os campos:</p>
+
+<ol>
+  <li> <b>Ocorre a consulta;</b></li>
+  <li> <b>Obtém-se o diagnóstico do paciente;</b></li>
+  <li> <b>O médico acessa nossa aplicação;</b></li>
+  <li> <b>Realiza o Login/Cadastro;</b></li>
+  <li> <b>Preenche os campos: </b></li>
+  <ul>
+    <li> <b>CID-10;</b></li>
+    <li> <b>Idade;</b></li>
+    <li> <b>Peso (Kg)</b></li>
+  </ul>
+</ol>
+
+<p>Com os campos preenchidos, nosso sistema automaticamente gera receituários pré-prontos, fornecendo opções de escolha e, caso o médico em questão prefira/necessite, receituários limpos. </p>
+
+<p> - </p>
+
+<p><h4>🎯 Benefícios: </h4> Com o sistema funcionando, uma série de benefícios são alcançados:</p>
+
+<ol>
+  <li><b> Tempo de consulta reduzido;</b></li>
+  <li><b> Falha médica improvável;</b></li>
+  <li><b> Melhor prognóstico;</b></li>
+  <li><b> Melhora na qualidade de trabalho;</b></li>
+  <li><b> Maior atenção ao paciente;</b></li>
+</ol>
+
+#
+
+<p><i>❓ O que é o CID-10?</i></p>
+<p><i>(Classificação Internacional de Doenças, a décima revisão. Publicada pela Organização Mundial da Saúde (OMS), trata-se de um sistema de códigos alfanuméricos que permite identificar doenças, sintomas e outros problemas de saúde).</i></p>
 
 #
 
