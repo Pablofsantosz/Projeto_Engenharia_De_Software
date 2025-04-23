@@ -12,7 +12,8 @@
 
 <p><h4>📌 Visão Geral</h4> Este projeto é um sistema web desenvolvido para gerar automaticamente receituários médicos durante atendimentos em emergências pediátricas da rede pública de saúde (UPA - PE). A iniciativa nasceu da necessidade de otimizar o tempo dos profissionais, reduzir erros e melhorar a qualidade do atendimento.</p>
 
-<p> - </p>
+---
+
 
 <p><h4>🚨 Problema:</h4> Ana atua na linha de frente do atendimento em uma emergência pediátrica da rede pública de saúde do estado de Pernambuco. Durante a rotina, observou que dedicava uma parte significativa do tempo de consulta à elaboração manual de receituários. Atividade que embora essencial, revelou-se ineficiente diante da recorrência de casos clínicos semelhantes.</p>
   
@@ -20,11 +21,11 @@
 
 <p>Consequentemente, Ana escreve praticamente os mesmos receituários 12, 15 vezes ao dia, tornando as consultas cansativas e, por mais que pouco, suscetíveis a falha médica.</p>
 
-<p> - </p>
+---
 
 <p><h4>✅ Solução: </h4>Diante dessa situação e após algumas reuniões com Ana para levantamento de informações, foi decidido criar um sistema WEB para geração automática de receituários em emergências pediátricas em UPAs - PE. <b>É importante ressaltar que o receituário é feito durante o tempo de consulta.</b></p>
 
-<p> - </p>
+---
 
 <p><h4>📝 Os receituários: </h4></p> 
 
@@ -39,7 +40,7 @@
 
 <p>Intuitivamente, os receituários mudam de acordo com o diagnóstico.</p>
 
-<p> - </p>
+---
 
 <p><h4>✅ Como funciona: </h4>Durante a consulta, após o diagnóstico do paciente, o médico acessaria o site e, após cadastro/login, preencheria os campos:</p>
 
@@ -58,7 +59,7 @@
 
 <p>Com os campos preenchidos, nosso sistema automaticamente gera receituários pré-prontos, fornecendo opções de escolha e, caso o médico em questão prefira/necessite, receituários limpos. </p>
 
-<p> - </p>
+---
 
 <p><h4>🎯 Benefícios: </h4> Com o sistema funcionando, uma série de benefícios são alcançados:</p>
 
