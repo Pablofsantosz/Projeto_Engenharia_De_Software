@@ -86,13 +86,10 @@
 <p><i>❓ O que é o CID-10?</i></p>
 <p><i>(Classificação Internacional de Doenças, a décima revisão. Publicada pela Organização Mundial da Saúde (OMS), trata-se de um sistema de códigos alfanuméricos que permite identificar doenças, sintomas e outros problemas de saúde).</i></p>
 
-#
-
+---
 
 <h4 align="left">👥 Integrantes:</h4>
 <p>Malu de Faria Neves Bezerra</p>
 <p>Nunno Wakiyama Diniz Carvalho</p>
 <p>Pablo Felipe dos Santos</p>
 <p>Pedro Alves dos Santos </p>
-
-#
