@@ -102,5 +102,4 @@
 <p>Pedro Alves dos Santos </p>
 
 
-![image](https://github.com/user-attachments/assets/e45c0a28-7af3-400e-bafa-291b5f1490ea)
 
