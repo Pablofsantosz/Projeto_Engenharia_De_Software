@@ -1,7 +1,7 @@
 <div align="left"> 
   <img src="https://github.com/user-attachments/assets/1671ae0c-2c24-40f4-bb2d-10f31841f12d" height="40" alt="Nome do Projeto"  />
   <img width="220" />
-  <img src="https://cdn.discordapp.com/attachments/1362418593458946292/1362430009884807218/13922805-cdef-7e74-4d8c-e450b9e162f0.png?ex=68025d53&is=68010bd3&hm=eadac8c9883fa75145bdeab22097d878a1566afa312dc96c31c207db6a6bbeb9&" height="100" alt="UNICAP logo"  />
+  <img src="https://portal.unicap.br/documents/475032/750674/Unicap_Icam_Tech-01.png/13922805-cdef-7e74-4d8c-e450b9e162f0?t=1605909509227" height="100" alt="UNICAP logo"  />
 </div>
 
 #
