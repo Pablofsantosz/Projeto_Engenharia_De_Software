@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página Principal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .top-bar {
+      background-color: #00796b;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+    .icon-button {
+      background-color: #004d40;
+      border-radius: 50%;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .center-icon img {
+      height: 40px;
+    }
+
+    .icon-button img {
+      height: 24px;
+    }
+
+    .content {
+      background-color: #f5f9f8;
+      height: calc(100vh - 60px); /* Ajuste se o topo mudar de tamanho */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <!-- Botão do menu -->
+    <div class="icon-button">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/menu--v1.png" alt="Menu" />
+    </div>
+
+    <!-- Ícone central (símbolo médico) -->
+    <div class="center-icon">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/medical-symbol.png" alt="Símbolo Médico" />
+    </div>
+
+    <!-- Botão de perfil -->
+     
+      <a href="{% url 'cadastro' %}" class="icon-button">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/user.png" alt="Perfil" />
+  </a>
+
+    
+  </div>
+
+  <div class="content">
+    <!-- Conteúdo da página -->
+  </div>
+
+  
+
+</body>
+</html>
