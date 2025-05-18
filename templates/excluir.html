@@ -92,8 +92,8 @@
       <h2>Excluir conta</h2>
       <p>Insira sua senha atual no espaço abaixo para confirmar a exclusão</p>
       <input type="password" placeholder="Senha atual">
-      <button>Confirmar</button>
-      <button class="cancelar">Cancelar</button>
+      <a href="{% url 'login' %}" ><button>Confirmar</button></a>
+      <a href="{% url 'perfil' %}" ><button class="cancelar">Cancelar</button></a>
     </div>
   </div>
 

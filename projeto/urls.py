@@ -25,10 +25,8 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.login,name ='login'),
-    path('credenciamento/', include("credenciamento.urls"))
-    
-    
-    
+    path('credenciamento/', include("credenciamento.urls")),
+    path('webapp/',include("webapp.urls"))
     # path('testeHtml/',views.teste_cadastro,name ='cadastro'),
     # path('testeLogin/',views.teste_login, name ='login'),
     # path('tmnc/', views.teste , name ="teste"),
