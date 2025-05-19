@@ -1,35 +1,52 @@
-<!DOCTYPE html>
-
+:<!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <title>Excluir Conta</title>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>Excluir Conta</title>
+    
+</head>
+<body>
 
-    <div class="container">
+<div class="container">
 
-        <div class="mensagem">
-            <h2>Bem-vindo de volta!</h2>
-            <p>
-                Siga os comandos a seguir para deletar seu perfil:<br>
-                1. Digite sua senha atual no espaço definido<br>
-                2. Prime no botão “confirmar”
-            </p>
-        </div>
-
-        <div class="form-box">
-            <h2>Excluir conta</h2>
-            <p>Insira sua senha atual no espaço abaixo para confirmar a exclusão</p>
-            <input type="password" placeholder="Senha atual">
-            <a href="{% url 'login' %}" ><button>Confirmar</button></a>
-            <a href="{% url 'perfil' %}" ><button class="cancelar">Cancelar</button></a>
-        </div>
-
+    <div class="mensagem">
+        <h2>Bem-vindo de volta!</h2>
+        <p>
+            Siga os comandos a seguir para deletar seu perfil:<br>
+            1. Digite sua senha atual no espaço definido<br>
+            2. Prime no botão “confirmar”
+        </p>
     </div>
 
-    </body>
+    <div class="form-box">
+        <h2>Excluir conta</h2>
+        <p>Insira sua senha atual no espaço abaixo para confirmar a exclusão</p>
 
+        <!-- Mensagens de erro ou sucesso -->
+        {% if messages %}
+            <div class="mensagens">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- Formulário -->
+        <form method="POST">
+            {% csrf_token %}
+            <input type="password" name="senha" placeholder="Senha atual" required>
+            <button type="submit">Confirmar</button>
+        </form>
+
+        <!-- Cancelar volta para o perfil -->
+        <a href="{% url 'perfil' %}">
+            <button class="cancelar">Cancelar</button>
+        </a>
+    </div>
+
+</div>
+
+</body>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -102,6 +119,11 @@
             cursor: pointer;
             border: none;
         }
-    </style>
 
+        .mensagens {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    </style>
 </html>
