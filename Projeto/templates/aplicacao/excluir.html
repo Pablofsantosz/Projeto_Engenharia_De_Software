@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Excluir Conta</title>
+    </head>
+    <body>
+
+    <div class="container">
+
+        <div class="mensagem">
+            <h2>Bem-vindo de volta!</h2>
+            <p>
+                Siga os comandos a seguir para deletar seu perfil:<br>
+                1. Digite sua senha atual no espaço definido<br>
+                2. Prime no botão “confirmar”
+            </p>
+        </div>
+
+        <div class="form-box">
+            <h2>Excluir conta</h2>
+            <p>Insira sua senha atual no espaço abaixo para confirmar a exclusão</p>
+            <input type="password" placeholder="Senha atual">
+            <a href="{% url 'login' %}" ><button>Confirmar</button></a>
+            <a href="{% url 'perfil' %}" ><button class="cancelar">Cancelar</button></a>
+        </div>
+
+    </div>
+
+    </body>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7ffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .mensagem {
+            background-color: #00695c;
+            color: white;
+            padding: 40px;
+            width: 300px;
+        }
+
+        .mensagem h2 {
+            margin-bottom: 20px;
+        }
+
+        .mensagem p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .form-box {
+            background-color: white;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            border-left: 1px solid #ccc;
+        }
+
+        .form-box h2 {
+            color: #00695c;
+            margin-bottom: 15px;
+        }
+
+        .form-box input {
+            width: 100%;
+            padding: 10px;
+            margin: 15px 0;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+        }
+
+        .form-box button {
+            width: 100%;
+            padding: 10px;
+            background-color: #00695c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-box .cancelar {
+            background-color: transparent;
+            color: #00695c;
+            margin-top: 10px;
+            cursor: pointer;
+            border: none;
+        }
+    </style>
+
+</html>
