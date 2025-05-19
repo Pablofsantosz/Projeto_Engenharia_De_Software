@@ -15,6 +15,8 @@ def credenciamento_cadastro(request):
         crm = request.POST.get('crm')
         email = request.POST.get('email')
         senha = request.POST.get('senha')  # Ideal: aplicar hash
+        
+        # print para debbugar
         print(f'Nome: {nome}, CPF: {cpf}, CRM: {crm}, Email: {email}, Senha: {senha}')
 
         # Validação de CPF e e-mail já existentes
@@ -41,7 +43,9 @@ def credenciamento_cadastro(request):
                 email = email,
                 senha = senha_hash
             )
-            # Verificando se o usuário foi criado com sucesso
+            
+            
+            # print para debbugar
             print(f'Usuário criado com ID: {usuario.id}')
 
             messages.success(request, 'Cadastro realizado com sucesso!')

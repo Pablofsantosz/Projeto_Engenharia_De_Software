@@ -11,10 +11,10 @@ def aplicacao_homepage(request):
 
 @login_required
 def aplicacao_perfil(request):
-    # Garante que o usuário do modelo Usuario corresponde ao usuário logado
+    # Garante que o usuário do modelo Usuario corresponde ao usuário logado (classe usuario do credenciamento/models)
     usuario = Usuario.objects.filter(email=request.user.email).first()
 
-    # Em casos muito raros, pode não encontrar o usuário no modelo customizado
+    # Em casos muito raros, pode não encontrar o usuário no modelo customizado(classe usuario do credenciamento/models)
     if not usuario:
         return render(request, 'aplicacao/perfil.html', {'erro': 'Usuário não encontrado.'})
 
@@ -22,6 +22,9 @@ def aplicacao_perfil(request):
 
 def aplicacao_excluir(request):
     return render (request,'aplicacao/excluir.html')
+
+
+
 
 # TENTATIVA DE EXCLUIR DO BD
 def aplicacao_excluir(request):
@@ -32,10 +35,10 @@ def aplicacao_excluir(request):
 
         if user_auth:
             try:
-                # Apaga também o modelo customizado
+                # apaga também o modelo customizado(classe usuario do credenciamento/models)
                 Usuario.objects.filter(email=user.email).delete()
 
-                # Apaga o usuário base
+                # apaga o usuário do bd
                 user.delete()
 
                 logout(request)
