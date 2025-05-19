@@ -20,7 +20,7 @@ from . import views  # importa tudo da pasta views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.projeto_login, name = 'login'),
+    path('', views.projeto_login, name = 'login'), # pagina inicial de login
     path('credenciamento/', include('credenciamento.urls')),
     path('aplicacao/', include('aplicacao.urls')),
 ]

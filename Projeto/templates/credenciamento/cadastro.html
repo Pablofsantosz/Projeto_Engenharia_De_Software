@@ -7,8 +7,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
     </head>
     <body>
-        <h1>Adicione suas tarefas aqui!</h1>
-        <a href="{% url 'login' %}">Voltar pra login</a>
 
         <div class="container">
             <div class="left-panel">
@@ -171,11 +169,19 @@
     .message.error {
       background-color: #f8d7da;
       color: #721c24;
+      border: 1px solid #e32b2e;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 8px;
     }
 
     .message.success {
       background-color: #d4edda;
       color: #155724;
+      border: 1px solid #e32b2e;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 8px;
     }
 
     .back {

@@ -20,30 +20,40 @@
 
                 <h2>Login</h2>
 
-                <div class="input-group">
-                    <i class="fas fa-envelope"></i>
-                    <input type="email" placeholder="Email" />
-                </div>
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" name="username" placeholder="Email" required />
+                    </div>
 
-                <div class="input-group">
-                    <i class="fas fa-id-card"></i>
-                    <input type="text" placeholder="CPF ou CRM" />
-                </div>
+                    <div class="input-group">
+                        <i class="fas fa-id-card"></i>
+                        <input type="text" name="cpfcrm" placeholder="CPF ou CRM" />
+                    </div>
 
-                <div class="input-group">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Senha" />
-                </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password" placeholder="Senha" required />
+                    </div>
 
-                <!-- Linha com "Esqueceu a senha?" e "Cadastre-se" discretos -->
-                <div class="options">
-                    <a href="{% url 'credenciamento:cadastro' %}">Cadastre-se</a>
-                    <a href="#">Esqueceu sua senha?</a>
-                </div>
+                    <div class="options">
+                        <a href="{% url 'credenciamento:cadastro' %}">Cadastre-se</a>
+                        <a href="#">Esqueceu sua senha?</a>
+                    </div>
 
-                <!-- Botão de login -->
-                <a href="{% url 'homepage' %}" class="btn">Entrar</a>
-            </div>
+                    <button type="submit" class="btn">Entrar</button>
+                </form>
+                
+                {% if messages %}
+                  <ul class="messages">
+                    {% for message in messages %}
+                      <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }} </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+            </div>  
         </div>
     </body>
 
@@ -149,20 +159,41 @@
         }
 
         .btn {
-        background-color: #00796B;
-        color: white;
-        border: none;
-        padding: 12px 24px;
-        border-radius: 8px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background 0.3s ease;
-        text-decoration: none;
+            background-color: #00796B;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-decoration: none;
         }
 
         .btn:hover {
-        background-color: #005f56;
+            background-color: #005f56;
         }
+
+        /* Estilo para mensagens */
+        .messages {
+          list-style: none;
+          margin-top: 10px;
+          max-width: 300px;
+          width: 100%;
+          color: #e32b2e;
+          /*font-weight: bold;*/
+        }
+
+    /* Estilo para mensagens de erro */
+    .messages li.error {
+        color: #e32b2e; /* vermelho mais evidente */
+        
+        background-color: #ffd2d2;
+        border: 1px solid #e32b2e;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 8px;
+    }
     </style>
 
 </html>

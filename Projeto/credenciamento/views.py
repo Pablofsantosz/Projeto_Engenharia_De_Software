@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.http import HttpResponse
 from .models import Usuario
 from django.contrib.auth.hashers import make_password
+from django.contrib.auth.models import User  # importa o User
 
 # Create your views here.
 
@@ -30,18 +31,22 @@ def credenciamento_cadastro(request):
 
         # Criar usuário no banco
         try:
+            # Cria o usuário do Django para login
+            user = User.objects.create_user(username = email, email = email, password = senha)
+
             usuario = Usuario.objects.create(
-                nome=nome,
-                cpf=cpf,
-                crm=crm,
-                email=email,
-                senha=senha_hash
+                nome = nome,
+                cpf = cpf,
+                crm = crm,
+                email = email,
+                senha = senha_hash
             )
             # Verificando se o usuário foi criado com sucesso
             print(f'Usuário criado com ID: {usuario.id}')
 
             messages.success(request, 'Cadastro realizado com sucesso!')
             return redirect('login')
+        
         except Exception as e:
             messages.error(request, f'Ocorreu um erro ao salvar o usuário: {str(e)}')
 
