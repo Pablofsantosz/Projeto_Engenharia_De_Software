@@ -23,7 +23,7 @@
 
   <h1 align="center">FastRx<p> </p></h1>
   <h1 align="center">🩺 Sistema de Receituário - UPA Emergência Pediátrica<p> </p></h1>
-  <img src="https://github.com/user-attachments/assets/efb351ed-f752-41a5-a114-8612326efc7f" height="300" align="center" alt="Nome do Projeto"  
+  <img src="https://drive.google.com/file/d/1Omjh6AFM_wad0mSB-UWomo6OhYYqhqX1/view?usp=sharing" height="300" align="center" alt="Nome do Projeto"  
   
   
 
@@ -107,8 +107,8 @@ Durante o desenvolvimento do projeto, aplicamos a metodologia de Programação e
 
 - Correções de bugs e testes de funcionalidade (Nunno e Pablo).
  </p></h1>
-  <img src="https://github.com/user-attachments/assets/efb351ed-f752-41a5-a114-8612326efc7f" height="300" align="center" alt="Nome do Projeto"  
-<p><h4>
+  <img src="https://drive.google.com/file/d/1Omjh6AFM_wad0mSB-UWomo6OhYYqhqX1/view?usp=sharing" height="300" align="center" alt="Nome do Projeto"  
+<p> <h4>
 Essa abordagem permitiu uma maior troca de conhecimento e agilidade na resolução de problemas
 
 
