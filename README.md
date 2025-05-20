@@ -47,23 +47,6 @@
 
 ---
 
-<p><h4>💻 Funcionalidades ja Implementadas: </h4>
-
-<ul>
-  <li> <b>UH Cadastro na plataforma:</b></li> <a href="https://drive.google.com/file/d/1AJ1JAV1P2eAUrjOlKnR5MxB_MT1ocsg-/view?usp=sharing" target="_blank">
-  <img src="https://img.shields.io/badge/Cadastro-007968.svg?style=for-the-badge&logo=google-drive&logoColor=white" alt="Cadastro" />
-</a>
-
-  <li> <b>UH Login na plataforma: </b></li><a href="https://drive.google.com/file/d/1mxb2XkSs_eh8iuMGfPaPC_BZw4pmBhrv/view?usp=sharing"_blank">
-  <img src="https://img.shields.io/badge/Login-007968.svg?style=for-the-badge&logo=google-drive&logoColor=white" alt="Login" />
-</a>
-  <li> <b>UH Excluir Conta: </b>;</li><a href="https://drive.google.com/file/d/13XiDV0qndAkEAthdqe9HudXuzbm4LCiC/view?usp=sharing"_blank">
-  <img src="https://img.shields.io/badge/Excluir Conta-007968.svg?style=for-the-badge&logo=google-drive&logoColor=white" alt="Login" />
-</a>
-</ul>
-
----
-
 <p><h4>📝 Os receituários: </h4></p> 
 
 <b>(Antes de explicar como funciona, é necessário explicar como se constrói um receituário)</b>
@@ -108,10 +91,52 @@
   <li><b> Maior atenção ao paciente;</b></li>
 </ol>
 
-#
+---
 
 <p><i>❓ O que é o CID-10?</i></p>
 <p><i>(Classificação Internacional de Doenças, a décima revisão. Publicada pela Organização Mundial da Saúde (OMS), trata-se de um sistema de códigos alfanuméricos que permite identificar doenças, sintomas e outros problemas de saúde).</i></p>
+
+---
+
+<h4>🤝 Programação em Pares:</h4>
+
+Durante o desenvolvimento do projeto, aplicamos a metodologia de Programação em Pares nas seguintes tarefas:
+
+- Implementação do login  cadastro  (Nunno e Pablo);
+- Implementação da auteticação do login (Nunno e Pablo);
+- Correções de bugs e testes de funcionalidade (Nunno e Pablo).
+
+Essa abordagem permitiu uma maior troca de conhecimento e agilidade na resolução de problemas
+
+---
+
+<p><h4>💻 Funcionalidades ja Implementadas: </h4>
+
+<ul>
+  <li> <b>UH Cadastro na plataforma:</b></li> <a href="https://drive.google.com/file/d/1AJ1JAV1P2eAUrjOlKnR5MxB_MT1ocsg-/view?usp=sharing" target="_blank">
+  <img src="https://img.shields.io/badge/Cadastro-007968.svg?style=for-the-badge&logo=google-drive&logoColor=white" alt="Cadastro" />
+</a>
+
+  <li> <b>UH Login na plataforma: </b></li><a href="https://drive.google.com/file/d/1mxb2XkSs_eh8iuMGfPaPC_BZw4pmBhrv/view?usp=sharing"_blank">
+  <img src="https://img.shields.io/badge/Login-007968.svg?style=for-the-badge&logo=google-drive&logoColor=white" alt="Login" />
+</a>
+  <li> <b>UH Excluir Conta: </b>;</li><a href="https://drive.google.com/file/d/13XiDV0qndAkEAthdqe9HudXuzbm4LCiC/view?usp=sharing"_blank">
+  <img src="https://img.shields.io/badge/Excluir Conta-007968.svg?style=for-the-badge&logo=google-drive&logoColor=white" alt="Login" />
+</a>
+</ul>
+
+---
+
+<h4>🎥 Screencast das Funcionalidades</h4>
+
+O vídeo abaixo apresenta a demonstração das funcionalidades implementadas:
+
+🔗 [Clique aqui para assistir no YouTube](https://youtu.be/uQzJRZK_C74?si=oOG6BtTm4aDfDp6o)
+
+Funcionalidades demonstradas:
+- Cadastro de usuário
+- Login
+- Exclusão de conta
 
 ---
 
