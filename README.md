@@ -106,26 +106,12 @@ Durante o desenvolvimento do projeto, aplicamos a metodologia de Programação e
 - Implementação da auteticação do login (Nunno e Pablo);
 
 - Correções de bugs e testes de funcionalidade (Nunno e Pablo).
-
+ </p></h1>
+  <img src="https://github.com/user-attachments/assets/efb351ed-f752-41a5-a114-8612326efc7f" height="300" align="center" alt="Nome do Projeto"  
+<p><h4>
 Essa abordagem permitiu uma maior troca de conhecimento e agilidade na resolução de problemas
 
 
----
-
-<p><h4>💻 Funcionalidades ja Implementadas: </h4>
-
-<ul>
-  <li> <b>UH Cadastro na plataforma:</b></li> <a href="https://drive.google.com/file/d/1AJ1JAV1P2eAUrjOlKnR5MxB_MT1ocsg-/view?usp=sharing" target="_blank">
-  <img src="https://img.shields.io/badge/Cadastro-007968.svg?style=for-the-badge&logo=google-drive&logoColor=white" alt="Cadastro" />
-</a>
-
-  <li> <b>UH Login na plataforma: </b></li><a href="https://drive.google.com/file/d/1mxb2XkSs_eh8iuMGfPaPC_BZw4pmBhrv/view?usp=sharing"_blank">
-  <img src="https://img.shields.io/badge/Login-007968.svg?style=for-the-badge&logo=google-drive&logoColor=white" alt="Login" />
-</a>
-  <li> <b>UH Excluir Conta: </b>;</li><a href="https://drive.google.com/file/d/13XiDV0qndAkEAthdqe9HudXuzbm4LCiC/view?usp=sharing"_blank">
-  <img src="https://img.shields.io/badge/Excluir Conta-007968.svg?style=for-the-badge&logo=google-drive&logoColor=white" alt="Login" />
-</a>
-</ul>
 
 ---
 
@@ -133,12 +119,25 @@ Essa abordagem permitiu uma maior troca de conhecimento e agilidade na resoluç�
 
 O vídeo abaixo apresenta a demonstração das funcionalidades implementadas:
 
-🔗 [Clique aqui para assistir no YouTube](https://youtu.be/uQzJRZK_C74?si=oOG6BtTm4aDfDp6o)
+   <a href="https://youtu.be/uQzJRZK_C74?si=oOG6BtTm4aDfDp6o"><img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" alt="ScreenCast" /></a>
+  </p>
 
 Funcionalidades demonstradas:
-- Cadastro de usuário
-- Login
-- Exclusão de conta
+<ul>
+  <li>  <b> UH Cadastro na plataforma:</b>
+ <a href="https://drive.google.com/file/d/1AJ1JAV1P2eAUrjOlKnR5MxB_MT1ocsg-/view?usp=sharing" target="_blank">
+  <img src="https://img.shields.io/badge/Cadastro-007968.svg?style=for-the-badge&logo=google-drive&logoColor=white" alt="Cadastro" />
+</a>
+
+  <li> <b>UH Login na plataforma: </b>
+  <a href="https://drive.google.com/file/d/1mxb2XkSs_eh8iuMGfPaPC_BZw4pmBhrv/view?usp=sharing"_blank">
+  <img src="https://img.shields.io/badge/Login-007968.svg?style=for-the-badge&logo=google-drive&logoColor=white" alt="Login" />
+</a>
+  <li> <b>UH Excluir Conta: </b>
+  <a href="https://drive.google.com/file/d/13XiDV0qndAkEAthdqe9HudXuzbm4LCiC/view?usp=sharing"_blank">
+  <img src="https://img.shields.io/badge/Excluir Conta-007968.svg?style=for-the-badge&logo=google-drive&logoColor=white" alt="Login" />
+</a>
+</ul>
 
 ---
 <h4>🐞 Bug Tracker</h4>
