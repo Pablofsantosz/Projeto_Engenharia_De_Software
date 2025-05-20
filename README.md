@@ -57,7 +57,7 @@
   <li> <b>UH Login na plataforma: </b></li><a href="https://drive.google.com/file/d/1mxb2XkSs_eh8iuMGfPaPC_BZw4pmBhrv/view?usp=sharing"_blank">
   <img src="https://img.shields.io/badge/Login-007968.svg?style=for-the-badge&logo=google-drive&logoColor=white" alt="Login" />
 </a>
-  <li> <b>Excluir Conta: </b>;</li><a href="https://drive.google.com/file/d/13XiDV0qndAkEAthdqe9HudXuzbm4LCiC/view?usp=sharing"_blank">
+  <li> <b>UH Excluir Conta: </b>;</li><a href="https://drive.google.com/file/d/13XiDV0qndAkEAthdqe9HudXuzbm4LCiC/view?usp=sharing"_blank">
   <img src="https://img.shields.io/badge/Excluir Conta-007968.svg?style=for-the-badge&logo=google-drive&logoColor=white" alt="Login" />
 </a>
 </ul>
