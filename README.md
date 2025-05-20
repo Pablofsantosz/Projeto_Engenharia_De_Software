@@ -107,7 +107,7 @@ Durante o desenvolvimento do projeto, aplicamos a metodologia de Programação e
 - Correções de bugs e testes de funcionalidade (Nunno e Pablo).
 
 Essa abordagem permitiu uma maior troca de conhecimento e agilidade na resolução de problemas
-![Programação em Par](assets/programacao_em_par.jpg)
+
 
 ---
 
