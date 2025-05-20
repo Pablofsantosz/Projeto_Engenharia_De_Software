@@ -24,7 +24,14 @@
   <h1 align="center">FastRx<p> </p></h1>
   <h1 align="center">🩺 Sistema de Receituário - UPA Emergência Pediátrica<p> </p></h1>
 
-<p><h4>📌 Visão Geral</h4> Este projeto é um sistema web desenvolvido para gerar automaticamente receituários médicos durante atendimentos em emergências pediátricas da rede pública de saúde (UPA - PE). A iniciativa nasceu da necessidade de otimizar o tempo dos profissionais, reduzir erros e melhorar a qualidade do atendimento.</p>
+<div align="center">
+  <img src="Images/Tela de login.png" width="470" />
+  <img src="Images/Tela-homepage.png" width="430" />
+</div>
+
+<br>
+
+<p><h4>📌 Visão Geral</h4> Este projeto é um sistema web desenvolvido para gerar automaticamente receituários médicos durante atendimentos em emergências pediátricas da rede pública de saúde (UPA - PE). A iniciativa nasceu da necessidade de otimizar o tempo dos profissionais, reduzir erros e melhorar a qualidade do atendimento.</p><br>
 
 ---
 
@@ -71,6 +78,8 @@
   </ul>
 </ol>
 
+<br>
+
 <p>Com os campos preenchidos, nosso sistema automaticamente gera receituários pré-prontos, fornecendo opções de escolha e, caso o médico em questão prefira/necessite, receituários limpos. </p>
 
 ---
@@ -94,16 +103,25 @@
 
 <h4>🤝 Programação em Pares:</h4>
 
-Durante o desenvolvimento do projeto, aplicamos a metodologia de Programação em Pares nas seguintes tarefas:
+<br>
 
-- Implementação do login , cadastro , excluir (Nunno e Pablo);
+<div align="center">
+  <img src="Images/Pair-programming1.png" width="450" alt="Pair programming 1"/>
+  <img src="Images/Pair-programming2.png" width="450" alt="Pair programming 2"/>
+</div>
+
+<br>
+
+<b>Durante o desenvolvimento do projeto, aplicamos a metodologia de Programação em Pares nas seguintes tarefas:</b>
+
+- Implementação das histórias login , cadastro , excluir conta (Nunno e Pablo);
+- Integração das histórias com o banco de dados sqlite3 (Nunno e Pablo);
 - Implementação da auteticação do login (Nunno e Pablo);
-
 - Correções de bugs e testes de funcionalidade (Nunno e Pablo).
- </p></h1>
-  <img src="https://github.com/malu-fnb/uparImagem/blob/main/Imagem%20do%20WhatsApp%20de%202025-05-20%20%C3%A0(s)%2010.40.55_6d770541.jpg" height="300" align="center" alt="programação em pares"  
-<p> <h4>
-Essa abordagem permitiu uma maior troca de conhecimento e agilidade na resolução de problemas
+
+#
+
+<b>Essa abordagem permitiu uma maior troca de conhecimento e agilidade na resolução de problemas</b>
 
 
 
@@ -116,21 +134,24 @@ O vídeo abaixo apresenta a demonstração das funcionalidades implementadas:
    <a href="https://youtu.be/uQzJRZK_C74?si=oOG6BtTm4aDfDp6o"><img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" alt="ScreenCast" /></a>
   </p>
 
-Funcionalidades demonstradas:
-<ul>
-  <li>  <b> UH Cadastro na plataforma:</b>
- </p></h1>
-  <img src="https://github.com/malu-fnb/uparImagem/blob/main/Captura%20de%20tela%202025-05-20%20132632.png" height="300" align="center" alt="programação em pares"  
-<p> <h4>
+<h3>Funcionalidades demonstradas:</h3>
 
-  <li> <b>UH Login na plataforma: </b>
- </p></h1>
-  <img src="https://github.com/malu-fnb/uparImagem/blob/main/Captura%20de%20tela%202025-05-20%20132357.png" height="300" align="center" alt="programação em pares"  
-<p> <h4>
-  <li> <b>UH Excluir Conta: </b>
- </p></h1>
-  <img src="https://github.com/malu-fnb/uparImagem/blob/main/Captura%20de%20tela%202025-05-20%20132557.png" height="300" align="center" alt="programação em pares"  
-<p> <h4>
+<ul>
+  <li>  <b>UH Cadastro na plataforma:</b><br><br>
+  <img src="Images/Tela de cadastro.png" width="450" align="center" style="margin-top: 50px; margin-bottom: 30px;" alt="Tela de cadastro"/>
+  </li>
+
+  <br><br>
+
+  <li> <b>UH Login na plataforma:</b><br><br>
+  <img src="Images/Tela de cadastro.png" width="450" align="center" style="margin-top: 50px; margin-bottom: 30px;" alt="Tela de login"/>
+  </li>
+
+  <br><br>
+   
+  <li> <b>UH Confirmar Senha Para Excluir Conta:</b><br><br>
+  <img src="Images/Tela inserir senha para excluir conta.png" width="450" align="center" style="margin-top: 50px; margin-bottom: 30px;" alt="Tela de inputar senha para exclusão da conta"/>
+  </li>
 </ul>
 
 ---
