@@ -23,12 +23,6 @@
 
   <h1 align="center">FastRx<p> </p></h1>
   <h1 align="center">🩺 Sistema de Receituário - UPA Emergência Pediátrica<p> </p></h1>
-  <img src="https://private-user-images.githubusercontent.com/134156256/437454003-efb351ed-f752-41a5-a114-8612326efc7f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDc3NjU0MjcsIm5iZiI6MTc0Nzc2NTEyNywicGF0aCI6Ii8xMzQxNTYyNTYvNDM3NDU0MDAzLWVmYjM1MWVkLWY3NTItNDFhNS1hMTE0LTg2MTIzMjZlZmM3Zi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyMFQxODE4NDdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kMTViZTVmOGU1MjA4OWVjNWZiZjNkMjcyYzM3YjBmMzQwNjdjYzM5MmY5NjEyYTc2ZDg0YTIwMDE1MjI4ZWMzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.6D1qwEOFsXI_YMw42EJ_B68aiQ7c3BP_1uHr5ZV501A" height="300" align="center" alt="Nome do Projeto"  
-  
-  
-
-
-
 
 <p><h4>📌 Visão Geral</h4> Este projeto é um sistema web desenvolvido para gerar automaticamente receituários médicos durante atendimentos em emergências pediátricas da rede pública de saúde (UPA - PE). A iniciativa nasceu da necessidade de otimizar o tempo dos profissionais, reduzir erros e melhorar a qualidade do atendimento.</p>
 
