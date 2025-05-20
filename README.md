@@ -16,7 +16,7 @@
     <a href="https://youtu.be/uQzJRZK_C74?si=oOG6BtTm4aDfDp6o"><img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" alt="ScreenCast" /></a>
   </p>
 <a href="https://drive.google.com/file/d/1KYlZ8NbpWH50f1MgVje8TT58aSciFUOs/view?usp=sharing" target="_blank">
-  <img src="https://img.shields.io/badge/abrir%20diagrama-6A0DAD.svg?style=for-the-badge&logo=draw.io&logoColor=white" alt="Abrir Diagrama" />
+  <img src="https://img.shields.io/badge/Diagrama de%20Atividade-6A0DAD.svg?style=for-the-badge&logo=draw.io&logoColor=white" alt="Abrir Diagrama" />
 </a>
 
 ---
@@ -44,6 +44,23 @@
 ---
 
 <p><h4>✅ Solução: </h4>Diante dessa situação e após algumas reuniões com Ana para levantamento de informações, foi decidido criar um sistema WEB para geração automática de receituários em emergências pediátricas em UPAs - PE. <b>É importante ressaltar que o receituário é feito durante o tempo de consulta.</b></p>
+
+---
+
+<p><h4>💻 Funcionalidades ja Implementadas: </h4>
+
+<ul>
+  <li> <b>UH Cadastro na plataforma:</b></li> <a href="https://drive.google.com/file/d/1AJ1JAV1P2eAUrjOlKnR5MxB_MT1ocsg-/view?usp=sharing" target="_blank">
+  <img src="https://img.shields.io/badge/Cadastro-007968.svg?style=for-the-badge&logo=google-drive&logoColor=white" alt="Cadastro" />
+</a>
+
+  <li> <b>UH Login na plataforma: </b></li><a href="https://drive.google.com/file/d/1mxb2XkSs_eh8iuMGfPaPC_BZw4pmBhrv/view?usp=sharing"_blank">
+  <img src="https://img.shields.io/badge/Login-007968.svg?style=for-the-badge&logo=google-drive&logoColor=white" alt="Login" />
+</a>
+  <li> <b>Excluir Conta: </b>;</li><a href="https://drive.google.com/file/d/13XiDV0qndAkEAthdqe9HudXuzbm4LCiC/view?usp=sharing"_blank">
+  <img src="https://img.shields.io/badge/Excluir Conta-007968.svg?style=for-the-badge&logo=google-drive&logoColor=white" alt="Login" />
+</a>
+</ul>
 
 ---
 
