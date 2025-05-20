@@ -23,7 +23,7 @@
 
   <h1 align="center">FastRx<p> </p></h1>
   <h1 align="center">🩺 Sistema de Receituário - UPA Emergência Pediátrica<p> </p></h1>
-  <img src="https://drive.google.com/file/d/1Omjh6AFM_wad0mSB-UWomo6OhYYqhqX1/view?usp=sharing" height="300" align="center" alt="Nome do Projeto"  
+  <img src="https://private-user-images.githubusercontent.com/134156256/437454003-efb351ed-f752-41a5-a114-8612326efc7f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDc3NjU0MjcsIm5iZiI6MTc0Nzc2NTEyNywicGF0aCI6Ii8xMzQxNTYyNTYvNDM3NDU0MDAzLWVmYjM1MWVkLWY3NTItNDFhNS1hMTE0LTg2MTIzMjZlZmM3Zi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyMFQxODE4NDdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kMTViZTVmOGU1MjA4OWVjNWZiZjNkMjcyYzM3YjBmMzQwNjdjYzM5MmY5NjEyYTc2ZDg0YTIwMDE1MjI4ZWMzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.6D1qwEOFsXI_YMw42EJ_B68aiQ7c3BP_1uHr5ZV501A" height="300" align="center" alt="Nome do Projeto"  
   
   
 
@@ -107,7 +107,7 @@ Durante o desenvolvimento do projeto, aplicamos a metodologia de Programação e
 
 - Correções de bugs e testes de funcionalidade (Nunno e Pablo).
  </p></h1>
-  <img src="https://drive.google.com/file/d/1Omjh6AFM_wad0mSB-UWomo6OhYYqhqX1/view?usp=sharing" height="300" align="center" alt="Nome do Projeto"  
+  <img src="https://github.com/malu-fnb/uparImagem/blob/main/Imagem%20do%20WhatsApp%20de%202025-05-20%20%C3%A0(s)%2010.40.55_6d770541.jpg" height="300" align="center" alt="programação em pares"  
 <p> <h4>
 Essa abordagem permitiu uma maior troca de conhecimento e agilidade na resolução de problemas
 
@@ -125,18 +125,18 @@ O vídeo abaixo apresenta a demonstração das funcionalidades implementadas:
 Funcionalidades demonstradas:
 <ul>
   <li>  <b> UH Cadastro na plataforma:</b>
- <a href="https://drive.google.com/file/d/1AJ1JAV1P2eAUrjOlKnR5MxB_MT1ocsg-/view?usp=sharing" target="_blank">
-  <img src="https://img.shields.io/badge/Cadastro-007968.svg?style=for-the-badge&logo=google-drive&logoColor=white" alt="Cadastro" />
-</a>
+ </p></h1>
+  <img src="https://github.com/malu-fnb/uparImagem/blob/main/Captura%20de%20tela%202025-05-20%20132632.png" height="300" align="center" alt="programação em pares"  
+<p> <h4>
 
   <li> <b>UH Login na plataforma: </b>
-  <a href="https://drive.google.com/file/d/1mxb2XkSs_eh8iuMGfPaPC_BZw4pmBhrv/view?usp=sharing"_blank">
-  <img src="https://img.shields.io/badge/Login-007968.svg?style=for-the-badge&logo=google-drive&logoColor=white" alt="Login" />
-</a>
+ </p></h1>
+  <img src="https://github.com/malu-fnb/uparImagem/blob/main/Captura%20de%20tela%202025-05-20%20132357.png" height="300" align="center" alt="programação em pares"  
+<p> <h4>
   <li> <b>UH Excluir Conta: </b>
-  <a href="https://drive.google.com/file/d/13XiDV0qndAkEAthdqe9HudXuzbm4LCiC/view?usp=sharing"_blank">
-  <img src="https://img.shields.io/badge/Excluir Conta-007968.svg?style=for-the-badge&logo=google-drive&logoColor=white" alt="Login" />
-</a>
+ </p></h1>
+  <img src="https://github.com/malu-fnb/uparImagem/blob/main/Captura%20de%20tela%202025-05-20%20132557.png" height="300" align="center" alt="programação em pares"  
+<p> <h4>
 </ul>
 
 ---
