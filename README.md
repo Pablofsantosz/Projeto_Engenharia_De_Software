@@ -1,4 +1,4 @@
-<div align="left"> 
+ <div align="left"> 
   <img src="https://github.com/user-attachments/assets/1671ae0c-2c24-40f4-bb2d-10f31841f12d" height="40" alt="Nome do Projeto"  />
   <img width="220" />
   <img src="https://portal.unicap.br/documents/475032/750674/Unicap_Icam_Tech-01.png/13922805-cdef-7e74-4d8c-e450b9e162f0?t=1605909509227" height="100" alt="UNICAP logo"  />
@@ -102,8 +102,9 @@
 
 Durante o desenvolvimento do projeto, aplicamos a metodologia de Programação em Pares nas seguintes tarefas:
 
-- Implementação do login  cadastro  (Nunno e Pablo);
+- Implementação do login , cadastro , excluir (Nunno e Pablo);
 - Implementação da auteticação do login (Nunno e Pablo);
+
 - Correções de bugs e testes de funcionalidade (Nunno e Pablo).
 
 Essa abordagem permitiu uma maior troca de conhecimento e agilidade na resolução de problemas
