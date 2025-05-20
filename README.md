@@ -139,6 +139,24 @@ Funcionalidades demonstradas:
 - Exclusão de conta
 
 ---
+<h4>🐞 Bug Tracker</h4>
+
+Durante o desenvolvimento do projeto, enfrentamos algumas dificuldades técnicas e bugs, que documentamos abaixo como parte do nosso processo de aprendizado e evolução do sistema:
+
+<h3>🧠 Dificuldades </h3>
+
+- **Aprendizado do framework Django**: Tivemos dificuldades iniciais no entendimento da estrutura do Django e na prática de suas convenções, especialmente na separação entre models, views e templates.
+- **Manipulação do banco de dados**: Foi desafiador compreender como o Django ORM funciona e como realizar as migrações corretamente sem corromper os dados.
+
+
+### 🐛 Bug Encontrado - IDs não reutilizados
+
+Durante os testes, identificamos um comportamento específico no banco de dados:
+
+ **Cenário**: Ao cadastrar três usuários (1, 2, 3) e deletar o usuário de ID 2, a lista resultante fica como (1, 3).  
+ **Problema**: O ID 2 não é reutilizado então sempre ficara um espaço vazios sendo ocupado por nada  (isso acontece por que o sqlite é um  banco de dados relacional com chave primária autoincremental)
+
+---
 
 <h4 align="left">👥 Integrantes:</h4>
 <p>Malu de Faria Neves Bezerra</p>
