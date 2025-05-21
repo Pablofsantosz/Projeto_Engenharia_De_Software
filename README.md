@@ -15,8 +15,7 @@
     <img width="4" />
     <a href="https://youtu.be/uQzJRZK_C74?si=oOG6BtTm4aDfDp6o"><img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" alt="ScreenCast" /></a>
     <img width="4" />
-    <a href="https://youtu.be/CYxsg9Gxl5c"><img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" alt="ScreenCast2" /></a>
-    <img width="4" />
+   
   </p>
 <a href="Images/diagrama-3requisitos.png" target="_blank">
   <img src="https://img.shields.io/badge/Diagrama de%20Atividade-6A0DAD.svg?style=for-the-badge&logo=draw.io&logoColor=white" alt="Abrir Diagrama" />
