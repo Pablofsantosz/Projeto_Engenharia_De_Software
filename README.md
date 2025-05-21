@@ -134,7 +134,7 @@
 
 O vídeo abaixo apresenta a demonstração das funcionalidades implementadas:
 
-   <a href="https://youtu.be/uQzJRZK_C74?si=oOG6BtTm4aDfDp6o"><img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" alt="ScreenCast" /></a>
+   <a href="https://www.youtube.com/watch?v=CYxsg9Gxl5c"><img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" alt="ScreenCast" /></a>
   </p>
 
 <h3>Funcionalidades demonstradas:</h3>
