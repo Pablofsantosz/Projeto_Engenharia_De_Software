@@ -129,6 +129,12 @@
 
 ---
 
+
+<h4> Diagramas de Atividade</h4>
+ <img src="Images/diagrama-3requisitos.png" width="1000" align="center" style="margin-top: 50px; margin-bottom: 30px;" alt="Tela de cadastro"/>
+
+---
+
 <h4>🎥 Screencast das Funcionalidades</h4>
 
 O vídeo abaixo apresenta a demonstração das funcionalidades implementadas:
