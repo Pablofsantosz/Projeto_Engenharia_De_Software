@@ -13,8 +13,6 @@
     <img width="4" />
     <a href="https://trello.com/b/3Qem3tDw/projeto-engenharia-de-software"><img src="https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white" alt="Trello" target ="_blank" /></a>
     <img width="4" />
-    <a href="https://youtu.be/uQzJRZK_C74?si=oOG6BtTm4aDfDp6o"><img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" alt="ScreenCast" /></a>
-    <img width="4" />
    
   </p>
 <a href="Images/diagrama-3requisitos.png" target="_blank">
@@ -137,7 +135,12 @@
 
 <h4>🎥 Screencast das Funcionalidades</h4>
 
-O vídeo abaixo apresenta a demonstração das funcionalidades implementadas:
+1. O vídeo abaixo apresenta a demonstração do protótipo no figma:
+
+   <a href="https://youtu.be/uQzJRZK_C74?si=oOG6BtTm4aDfDp6o"><img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" alt="ScreenCast" /></a>
+    <img width="4" />
+
+2. O vídeo abaixo apresenta a demonstração das funcionalidades implementadas:
 
    <a href="https://www.youtube.com/watch?v=CYxsg9Gxl5c"><img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" alt="ScreenCast" /></a>
   </p>
