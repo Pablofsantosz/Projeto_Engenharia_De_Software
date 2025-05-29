@@ -22,4 +22,5 @@ urlpatterns = [
     path('homepage/', views.aplicacao_homepage, name = 'homepage'),
     path('perfil/', views.aplicacao_perfil, name = 'perfil'),
     path('excluir/', views.aplicacao_excluir, name = 'excluir'),
+    path('editar/', views.aplicacao_editar, name='editar'),
 ]

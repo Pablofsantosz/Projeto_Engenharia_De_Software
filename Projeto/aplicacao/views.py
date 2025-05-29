@@ -26,7 +26,7 @@ def aplicacao_excluir(request):
 
 
 
-# TENTATIVA DE EXCLUIR DO BD
+# TENTATIVA DE EXCLUIR CONTA BD
 def aplicacao_excluir(request):
     if request.method == 'POST':
         senha = request.POST.get('senha')
@@ -50,3 +50,25 @@ def aplicacao_excluir(request):
             messages.error(request, 'Senha incorreta. Tente novamente.')
 
     return render(request, 'aplicacao/excluir.html')
+
+# Tentativa de editar o nome da pessoa .
+@login_required
+def aplicacao_editar(request):
+    usuario = Usuario.objects.filter(email=request.user.email).first()
+
+    if not usuario:
+        messages.error(request, 'Usuário não encontrado.')
+        return redirect('perfil')
+
+    if request.method == 'POST':
+        novo_nome = request.POST.get('nome')
+
+        if novo_nome:
+            usuario.nome = novo_nome
+            usuario.save()
+            messages.success(request, 'Nome atualizado com sucesso!')
+            return redirect('perfil')
+        else:
+            messages.error(request, 'Por favor, insira um nome válido.')
+
+    return render(request, 'aplicacao/editar.html', {'usuario': usuario})
