@@ -62,13 +62,23 @@ def aplicacao_editar(request):
 
     if request.method == 'POST':
         novo_nome = request.POST.get('nome')
+        novo_email = request.POST.get('email')
+        nova_senha = request.POST.get('senha')
 
-        if novo_nome:
-            usuario.nome = novo_nome
-            usuario.save()
-            messages.success(request, 'Nome atualizado com sucesso!')
-            return redirect('perfil')
-        else:
-            messages.error(request, 'Por favor, insira um nome válido.')
+        # Atualiza dados
+        usuario.nome = novo_nome
+        usuario.email = novo_email
+        usuario.save()
 
-    return render(request, 'aplicacao/editar.html', {'usuario': usuario})
+        # Atualiza também o modelo User padrão do Django
+        user = request.user
+        user.email = novo_email
+        user.username = novo_email  # se você estiver usando email como username
+        if nova_senha:
+            user.set_password(nova_senha)
+        user.save()
+
+        messages.success(request, 'Perfil atualizado com sucesso. Faça login novamente se mudou a senha.')
+        return redirect('perfil')
+
+    return render(request, 'aplicacao/editar_perfil.html', {'usuario': usuario})
