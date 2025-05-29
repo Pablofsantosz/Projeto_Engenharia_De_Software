@@ -1,71 +1,127 @@
 {% load static %}
 <!DOCTYPE html>
-
 <html lang="pt-br">
 
-    <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Página Principal</title>
-    </head>
-    <body>
+</head>
 
-    <div class="top-bar">
-        <!-- Botão do menu -->
-        <div class="icon-button">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/menu--v1.png" alt="Menu" />
-        </div>
+<body>
 
-        <!-- Ícone central (símbolo médico) -->
-        <div class="center-icon">
-            <img src="https://images.emojiterra.com/google/android-nougat/512px/2695.png" alt="Símbolo Médico" />
-        </div>
-
-        <!-- Botão de perfil -->
-        <a href="{% url 'perfil' %}" class="icon-button">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/user.png" alt="Perfil" />
-        </a>
-        
+<div class="top-bar">
+    <!-- Botão do menu -->
+    <div class="icon-button" onclick="abrirSidebar()">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/menu--v1.png" alt="Menu" />
     </div>
 
-    </body>
+    <!-- simbolo medico -->
+    <div class="center-icon">
+        <img src="https://images.emojiterra.com/google/android-nougat/512px/2695.png" alt="Símbolo Médico" />
+    </div>
 
-    <style>
-        body {
+    <!-- Botão de perfil -->
+    <a href="{% url 'perfil' %}" class="icon-button">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/user.png" alt="Perfil" />
+    </a>
+</div>
+
+<!-- Sidebar oculta -->
+<div id="sidebar" class="sidebar">
+    <span class="close-btn" onclick="fecharSidebar()">&times;</span>
+    <button class="sidebar-btn">Botão 1</button>
+    <button class="sidebar-btn">Botão 2</button>
+</div>
+
+<script>
+    function abrirSidebar() {
+        document.getElementById("sidebar").style.width = "250px";
+    }
+
+    function fecharSidebar() {
+        document.getElementById("sidebar").style.width = "0";
+    }
+</script>
+
+</body>
+
+<style>
+    body {
         margin: 0;
         font-family: Arial, sans-serif;
-        }
+    }
 
-        .top-bar {
+    .top-bar {
         background-color: #00796b;
         color: white;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 10px 20px;
-        }
+    }
 
-        .icon-button {
+    .icon-button {
         background-color: #00796b;
         border-radius: 50%;
         padding: 10px;
         cursor: pointer;
-        }
+    }
 
-        .center-icon img {
+    .center-icon img {
         height: 70px;
         filter: brightness(0) invert(1);
-        
-        }
+    }
 
-        .icon-button img {
+    .icon-button img {
         height: 24px;
-        }
+    }
 
-        .content {
+    .content {
         background-color: #f5f9f8;
-        height: calc(100vh - 60px); /* Ajuste se o topo mudar de tamanho */
-        }
-    </style>
+        height: calc(100vh - 60px);
+    }
+
+    /* Sidebar */
+    .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #004d40;
+        overflow-x: hidden;
+        transition: 0.3s;
+        padding-top: 60px;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar-btn {
+        margin: 10px 0;
+        padding: 10px 20px;
+        background-color: #00796b;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .sidebar-btn:hover {
+        background-color: #00695c;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        color: white;
+    }
+</style>
 
 </html>
