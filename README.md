@@ -108,6 +108,8 @@
 <div align="center">
   <img src="Images/Pair-programming1.png" width="360" alt="Pair programming 1"/>
   <img src="Images/Pair-programming2.png" width="360" alt="Pair programming 2"/>
+  <img src="Images/programação em pares.jpg" width="500" alt="Pair programming 2"/>
+
 </div>
 
 <br>
