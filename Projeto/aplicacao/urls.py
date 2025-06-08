@@ -26,6 +26,7 @@ urlpatterns = [
     
     
      # URLs for new features
+     #
      
     path('gerar-receita/', views.gerar_receita, name='gerar_receita'),
     path('receitas/', views.acessar_receitas, name='acessar_receitas'),
