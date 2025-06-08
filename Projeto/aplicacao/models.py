@@ -20,22 +20,33 @@ class ReceitaTemplate(models.Model):
         return self.titulo
 
    
+# ... (imports no topo do arquivo) ...
+
+# Adicione esta linha ao seu modelo Consulta
 class Consulta(models.Model):
-    """Records a specific consultation with a patient."""
     medico = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name="consultas")
     paciente_nome = models.CharField(max_length=100)
     paciente_cpf = models.CharField(max_length=14)
-    # --- NOVOS CAMPOS ---
     paciente_idade = models.CharField(max_length=50, blank=True, null=True)
     paciente_peso = models.CharField(max_length=50, blank=True, null=True)
-    # --------------------
     sintomas = models.TextField()
     cid_aplicado = models.ForeignKey(CID, on_delete=models.SET_NULL, null=True)
     data_consulta = models.DateTimeField(auto_now_add=True)
 
+    # --- CAMPO NOVO ADICIONADO AQUI ---
+    # Este campo vai guardar a referência para a receita personalizada que foi gerada, se houver.
+    receita_gerada = models.ForeignKey(
+        'ReceitaPersonalizada', # Aponta para o modelo ReceitaPersonalizada
+        on_delete=models.SET_NULL, # Se a receita for deletada, o campo na consulta fica nulo, mas a consulta não é apagada.
+        null=True,                 # Permite que este campo seja nulo no banco de dados (nem toda consulta gera uma receita salva).
+        blank=True                 # Permite que o campo fique em branco em formulários.
+    )
+    # -----------------------------------
+
     def __str__(self):
         return f"Consulta de {self.paciente_nome} em {self.data_consulta.strftime('%d/%m/%Y')}"
-    
+
+# ... (o resto do arquivo models.py continua o mesmo) ...
 
 
 class ReceitaPersonalizada(models.Model):
@@ -49,3 +60,6 @@ class ReceitaPersonalizada(models.Model):
 
     def __str__(self):
         return f'{self.titulo_personalizado} (Dr. {self.medico.username})'
+    
+
+

@@ -5,7 +5,7 @@ from credenciamento.models import Usuario
 from django.contrib import messages
 from django.contrib.auth import authenticate, logout
 from .models import ReceitaTemplate, Consulta,CID
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from .models import ReceitaPersonalizada
 
 
@@ -151,26 +151,37 @@ def historico_atendimento(request):
 @login_required
 def gerar_receita(request):
     if request.method == 'POST':
-        # 1. Coletar dados do formulário
+        # ... (coleta de dados do formulário continua a mesma) ...
         paciente_nome = request.POST.get('paciente_nome')
         paciente_cpf = request.POST.get('paciente_cpf')
         paciente_idade = request.POST.get('paciente_idade')
         paciente_peso = request.POST.get('paciente_peso')
         sintomas = request.POST.get('sintomas')
-
-        # O CID agora vem do novo campo 'cid_select'
         cid_id = request.POST.get('cid_select')
         titulo_usado = request.POST.get('titulo')
         medicamentos_usados = request.POST.get('medicamentos')
         orientacoes_usadas = request.POST.get('orientacoes')
 
-        # Verifica se um CID foi selecionado
         if not cid_id:
             messages.error(request, 'Erro: Você deve selecionar um CID para a receita.')
-            # Redireciona de volta com os dados já preenchidos (se possível)
             return redirect('gerar_receita')
 
-        # 2. Salvar a consulta no histórico
+        # --- LÓGICA ATUALIZADA AQUI ---
+
+        # 1. VERIFICA SE O MÉDICO QUER SALVAR A RECEITA E A CRIA
+        receita_salva = None  # Começa como nulo
+        salvar_personalizada = request.POST.get('salvar_personalizada')
+        if salvar_personalizada:
+            # Cria o objeto e o armazena na variável 'receita_salva'
+            receita_salva = ReceitaPersonalizada.objects.create(
+                medico=request.user,
+                cid_id=cid_id,
+                titulo_personalizado=titulo_usado,
+                medicamentos_personalizados=medicamentos_usados,
+                orientacoes_personalizadas=orientacoes_usadas
+            )
+
+        # 2. Salva a consulta, passando a receita que acabamos de criar (ou None, se não foi criada)
         Consulta.objects.create(
             medico=request.user,
             paciente_nome=paciente_nome,
@@ -178,21 +189,13 @@ def gerar_receita(request):
             paciente_idade=paciente_idade,
             paciente_peso=paciente_peso,
             sintomas=sintomas,
-            cid_aplicado_id=cid_id
+            cid_aplicado_id=cid_id,
+            receita_gerada=receita_salva  # Conecta a consulta com a receita salva
         )
 
-        # 3. VERIFICAR SE O MÉDICO QUER SALVAR A RECEITA COMO PERSONALIZADA
-        salvar_personalizada = request.POST.get('salvar_personalizada')
-        if salvar_personalizada:
-            ReceitaPersonalizada.objects.create(
-                medico=request.user,
-                cid_id=cid_id, # Usando o cid_id do novo campo
-                titulo_personalizado=titulo_usado,
-                medicamentos_personalizados=medicamentos_usados,
-                orientacoes_personalizadas=orientacoes_usadas
-            )
+        # --- FIM DA LÓGICA ATUALIZADA ---
 
-        # 4. Preparar dados e renderizar a página final de impressão
+        # 3. Preparar dados e renderizar a página final de impressão (continua igual)
         medico_profile = get_object_or_404(Usuario, email=request.user.email)
         context = {
             'medicamentos': medicamentos_usados,
@@ -202,21 +205,46 @@ def gerar_receita(request):
             'medico': medico_profile,
         }
         return render(request, 'aplicacao/receita_final_ajustada.html', context)
-
-    # Se o método for GET
+    
+    # ... (o bloco GET continua o mesmo) ...
     else:
-        # Carrega todos os dados necessários para os formulários
         templates_gerais = ReceitaTemplate.objects.all().order_by('cid__codigo', 'titulo')
         receitas_medico = ReceitaPersonalizada.objects.filter(medico=request.user).order_by('titulo_personalizado')
-        todos_os_cids = CID.objects.all().order_by('codigo') # Buscando todos os CIDs
+        todos_os_cids = CID.objects.all().order_by('codigo')
         
         context = {
             'templates_gerais': templates_gerais,
             'receitas_personalizadas': receitas_medico,
-            'todos_os_cids': todos_os_cids, # Adicionando ao contexto
+            'todos_os_cids': todos_os_cids,
         }
         return render(request, 'aplicacao/gerar_receita.html', context)
     
     
-    
-    
+
+@login_required
+def ver_receita_salva(request, consulta_id):
+    """
+    Busca uma consulta e a receita personalizada associada a ela para exibição/impressão.
+    """
+    # Busca a consulta, garantindo que ela pertence ao médico logado (por segurança)
+    consulta = get_object_or_404(Consulta, id=consulta_id, medico=request.user)
+
+    # Verifica se existe uma receita personalizada ligada a esta consulta
+    if not consulta.receita_gerada:
+        messages.error(request, "Esta consulta não possui uma receita personalizada salva.")
+        return redirect('historico_atendimento')
+
+    # Busca os dados do perfil do médico para exibir no receituário
+    medico_profile = get_object_or_404(Usuario, email=request.user.email)
+
+    # Prepara o contexto com os dados da receita e do paciente para o template
+    context = {
+        'medicamentos': consulta.receita_gerada.medicamentos_personalizados,
+        'orientacoes': consulta.receita_gerada.orientacoes_personalizadas,
+        'paciente_nome': consulta.paciente_nome,
+        'paciente_cpf': consulta.paciente_cpf,
+        'medico': medico_profile,
+    }
+
+    # Reutiliza o mesmo template que a função de gerar receita usa para a impressão final
+    return render(request, 'aplicacao/receita_final_ajustada.html', context)

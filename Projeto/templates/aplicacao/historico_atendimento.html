@@ -24,7 +24,7 @@
                     <th>CPF</th>
                     <th>CID Aplicado</th>
                     <th>Sintomas</th>
-                </tr>
+                    <th>Receita Salva</th> </tr>
             </thead>
             <tbody>
                 {% for consulta in consultas %}
@@ -34,10 +34,19 @@
                     <td>{{ consulta.paciente_cpf }}</td>
                     <td>{{ consulta.cid_aplicado.codigo }}</td>
                     <td>{{ consulta.sintomas }}</td>
+                    <td>
+                        {% if consulta.receita_gerada %}
+                            <a href="{% url 'ver_receita_salva' consulta.id %}">
+                                {{ consulta.receita_gerada.titulo_personalizado }}
+                            </a>
+                        {% else %}
+                            <span style="color: #888;">N/A</span>
+                        {% endif %}
+                    </td>
                 </tr>
                 {% empty %}
                 <tr>
-                    <td colspan="5">Nenhuma consulta registrada ainda.</td>
+                    <td colspan="6">Nenhuma consulta registrada ainda.</td>
                 </tr>
                 {% endfor %}
             </tbody>

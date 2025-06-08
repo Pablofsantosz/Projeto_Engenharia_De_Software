@@ -33,4 +33,6 @@ urlpatterns = [
     path('receitas/<int:template_id>/', views.detalhe_receita, name='detalhe_receita'),
     path('receitas/<int:template_id>/imprimir/', views.imprimir_receita, name='imprimir_receita'),
     path('historico/', views.historico_atendimento, name='historico_atendimento'),
+    path('historico/consulta/<int:consulta_id>/ver-receita/', views.ver_receita_salva, name='ver_receita_salva'),
+
 ]
