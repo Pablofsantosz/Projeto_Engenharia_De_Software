@@ -20,8 +20,7 @@ def aplicacao_perfil(request):
 
     return render(request, 'aplicacao/perfil.html', {'usuario': usuario})
 
-def aplicacao_excluir(request):
-    return render (request,'aplicacao/excluir.html')
+
 
 
 
