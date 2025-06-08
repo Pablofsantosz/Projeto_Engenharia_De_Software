@@ -10,120 +10,139 @@
 
 <body>
 
-<div class="top-bar">
-    <!-- Botão do menu -->
-    <div class="icon-button" onclick="abrirSidebar()">
-        <img src="https://img.icons8.com/ios-filled/50/ffffff/menu--v1.png" alt="Menu" />
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <!-- Botão do menu -->
+        <div class="icon-button" onclick="abrirSidebar()">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/menu--v1.png" alt="Menu" />
+        </div>
+
+        <!-- Simbolo médico -->
+        <div class="center-icon">
+            <img src="https://images.emojiterra.com/google/android-nougat/512px/2695.png" alt="Símbolo Médico" />
+        </div>
+
+        <!-- Botão de perfil -->
+        <a href="{% url 'perfil' %}" class="icon-button">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/user.png" alt="Perfil" />
+        </a>
     </div>
 
-    <!-- simbolo medico -->
-    <div class="center-icon">
-        <img src="https://images.emojiterra.com/google/android-nougat/512px/2695.png" alt="Símbolo Médico" />
+    <!-- Sidebar oculta -->
+    <div id="sidebar" class="sidebar">
+        <span class="close-btn" onclick="fecharSidebar()">&times;</span>
+        <a href="{% url 'gerar_receita' %}" class="sidebar-btn">Criar Receita</a>
+        <a href="{% url 'acessar_receitas' %}" class="sidebar-btn">Ver/Editar Modelos</a>
+        <a href="{% url 'historico_atendimento' %}" class="sidebar-btn">Histórico Atendimento</a>
     </div>
 
-    <!-- Botão de perfil -->
-    <a href="{% url 'perfil' %}" class="icon-button">
-        <img src="https://img.icons8.com/ios-filled/50/ffffff/user.png" alt="Perfil" />
-    </a>
-</div>
+    <!-- Conteúdo principal com imagem centralizada -->
+    <div class="main-content">
+        <img src="https://peplanejasus.saude.pe.gov.br/images/rodapelogo.png" alt="Logo Central" class="central-image" />
+    </div>
 
-<!-- Sidebar oculta -->
-<div id="sidebar" class="sidebar">
-    <span class="close-btn" onclick="fecharSidebar()">&times;</span>
-    <a href="{% url 'gerar_receita' %}" class="sidebar-btn">Criar Receita</a>
-    <a href="{% url 'acessar_receitas' %}" class="sidebar-btn">Ver/Editar Modelos</a>
-    <a href="{% url 'historico_atendimento' %}" class="sidebar-btn">Histórico Atendimento</a>
-</div>
+    <!-- Scripts -->
+    <script>
+        function abrirSidebar() {
+            document.getElementById("sidebar").style.width = "250px";
+        }
 
+        function fecharSidebar() {
+            document.getElementById("sidebar").style.width = "0";
+        }
+    </script>
 
-<script>
-    function abrirSidebar() {
-        document.getElementById("sidebar").style.width = "250px";
-    }
+    <!-- Estilos -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
 
-    function fecharSidebar() {
-        document.getElementById("sidebar").style.width = "0";
-    }
-</script>
+        .top-bar {
+            background-color: #00796b;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        .icon-button {
+            background-color: #00796b;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .center-icon img {
+            height: 70px;
+            filter: brightness(0) invert(1);
+        }
+
+        .icon-button img {
+            height: 24px;
+        }
+
+        .main-content {
+            height: calc(100vh - 80px); /* Altura da tela menos a top bar */ 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+        }
+
+        .central-image {
+            max-width: 90%;
+            max-height: 80%;
+            object-fit: contain;
+            opacity: 0.3; /* deixa a imagem translúcida */
+            filter: brightness(0.8); /* opcional, realça um pouco as cores mesmo com opacidade */
+        }
+
+        /* Sidebar */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #004d40;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar-btn {
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #00796b;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .sidebar-btn:hover {
+            background-color: #00695c;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+        }
+    </style>
 
 </body>
-
-<style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-    }
-
-    .top-bar {
-        background-color: #00796b;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px 20px;
-    }
-
-    .icon-button {
-        background-color: #00796b;
-        border-radius: 50%;
-        padding: 10px;
-        cursor: pointer;
-    }
-
-    .center-icon img {
-        height: 70px;
-        filter: brightness(0) invert(1);
-    }
-
-    .icon-button img {
-        height: 24px;
-    }
-
-    .content {
-        background-color: #f5f9f8;
-        height: calc(100vh - 60px);
-    }
-
-    /* Sidebar */
-    .sidebar {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: #004d40;
-        overflow-x: hidden;
-        transition: 0.3s;
-        padding-top: 60px;
-        z-index: 1000;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .sidebar-btn {
-        margin: 10px 0;
-        padding: 10px 20px;
-        background-color: #00796b;
-        border: none;
-        color: white;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-    }
-
-    .sidebar-btn:hover {
-        background-color: #00695c;
-    }
-
-    .close-btn {
-        position: absolute;
-        top: 10px;
-        right: 20px;
-        font-size: 30px;
-        cursor: pointer;
-        color: white;
-    }
-</style>
 
 </html>
