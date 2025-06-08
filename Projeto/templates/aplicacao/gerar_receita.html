@@ -21,6 +21,7 @@
         .btn:hover { background-color: #005f56; }
         .row { display: flex; gap: 20px; }
         .col { flex: 1; }
+        a.btn-voltar { display: inline-block; margin-top: 20px; padding: 10px 15px; background: #00796b; color: white; text-decoration: none; border-radius: 5px; }
     </style>
 </head>
 <body>
@@ -77,6 +78,7 @@
 
             <button type="submit" class="btn">Gerar Receita para Impressão</button>
         </form>
+        <a href="{% url 'homepage' %}" class="btn-voltar">Voltar para a Homepage</a>
     </div>
 </body>
 </html>

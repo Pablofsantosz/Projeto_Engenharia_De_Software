@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar Relatório</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; height: 100vh;}
+        .form-container { background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
+        h1 { text-align: center; color: #00796b; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #333; }
+        .form-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .submit-btn { width: 100%; padding: 12px; background-color: #00796b; border: none; color: white; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold; }
+        .submit-btn:hover { background-color: #00695c; }
+        .submit-btn:disabled { background-color: #ccc; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+    ... (o CSS e o início do body continuam os mesmos) ...
+
+    <div class="form-container">
+        <h1>Informações para o Relatório</h1>
+        <form id="report-form" method="post">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="codigo">Código do Relatório (1 ou 2):</label>
+                <input type="text" id="codigo" name="codigo_relatorio" required>
+            </div>
+            <div class="form-group">
+                <label for="nome">Nome do Paciente:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade" required>
+            </div>
+            <div class="form-group">
+                <label for="peso">Peso (kg):</label>
+                <input type="text" id="peso" name="peso" required>
+            </div>
+            <button type="submit" class="submit-btn">Gerar e Baixar Relatório</button>
+        </form>
+    </div>
+
+... (o script JavaScript continua o mesmo) ...
+
+    <script>
+        // Encontra o formulário no HTML
+        const form = document.getElementById('report-form');
+
+        // Adiciona um "ouvinte" que espera pelo evento de "submit"
+        form.addEventListener('submit', function(event) {
+            // 1. Previne o comportamento padrão do formulário (que é recarregar a página)
+            event.preventDefault();
+
+            const submitButton = form.querySelector('.submit-btn');
+            submitButton.textContent = 'Gerando...';
+            submitButton.disabled = true;
+
+            // 2. Coleta os dados do formulário
+            const formData = new FormData(form);
+            const nomePaciente = formData.get('nome').replace(/ /g, '_').toLowerCase() || 'relatorio';
+
+            // 3. Envia os dados para a view do Django em segundo plano
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    // O CSRF token é necessário para requisições POST
+                    'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+                }
+            })
+            // 4. Quando o servidor responder, pega a resposta como um arquivo binário (blob)
+            .then(response => response.blob())
+            // 5. Com o arquivo em mãos, cria um link temporário e "clica" nele para baixar
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = `relatorio_${nomePaciente}.docx`; // Usa o nome do paciente no arquivo
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                a.remove();
+
+                // 6. FINALMENTE, redireciona para a homepage!
+                // Use a URL da sua homepage aqui. Se o nome da URL for 'homepage', por exemplo:
+                window.location.href = "{% url 'homepage' %}";
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Ocorreu um erro ao gerar o relatório.');
+                submitButton.textContent = 'Gerar e Baixar Relatório';
+                submitButton.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
