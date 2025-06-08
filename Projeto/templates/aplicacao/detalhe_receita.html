@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Modelo de Receita</title>
+</head>
+<style>
+    body { font-family: sans-serif; background-color: #f4f4f9; padding: 20px; }
+    .container { max-width: 800px; margin: auto; background: #fff; padding: 30px; border-radius: 8px; }
+    form { display: flex; flex-direction: column; }
+    label { font-weight: bold; margin-top: 15px; }
+    input, textarea { width: 100%; padding: 8px; margin-top: 5px; border-radius: 4px; border: 1px solid #ccc; }
+    textarea { height: 120px; }
+    .actions { margin-top: 20px; }
+    .btn { padding: 10px 20px; border: none; border-radius: 5px; color: white; text-decoration: none; cursor: pointer; }
+    .btn-salvar { background-color: #f9a825; }
+    .btn-imprimir { background-color: #00796b; }
+    .btn-voltar { background-color: #666; }
+</style>
+<body>
+    <div class="container">
+        <h1>Editar: {{ template.titulo }}</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="titulo">Título do Modelo:</label>
+            <input type="text" name="titulo" value="{{ template.titulo }}" required>
+
+            <label for="medicamentos">Medicamentos e Prescrições:</label>
+            <textarea name="medicamentos">{{ template.medicamentos }}</textarea>
+
+            <label for="orientacoes_gerais">Orientações Gerais:</label>
+            <textarea name="orientacoes_gerais">{{ template.orientacoes_gerais }}</textarea>
+
+            <div class="actions">
+                <button type="submit" class="btn btn-salvar">Salvar Alterações</button>
+                <a href="{% url 'imprimir_receita' template.id %}" class="btn btn-imprimir">Imprimir Receita</a>
+                <a href="{% url 'acessar_receitas' %}" class="btn btn-voltar">Voltar</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -23,4 +23,13 @@ urlpatterns = [
     path('perfil/', views.aplicacao_perfil, name = 'perfil'),
     path('excluir/', views.aplicacao_excluir, name = 'excluir'),
     path('editar/', views.aplicacao_editar, name='editar'),
+    
+    
+     # URLs for new features
+     
+    path('gerar-receita/', views.gerar_receita, name='gerar_receita'),
+    path('receitas/', views.acessar_receitas, name='acessar_receitas'),
+    path('receitas/<int:template_id>/', views.detalhe_receita, name='detalhe_receita'),
+    path('receitas/<int:template_id>/imprimir/', views.imprimir_receita, name='imprimir_receita'),
+    path('historico/', views.historico_atendimento, name='historico_atendimento'),
 ]

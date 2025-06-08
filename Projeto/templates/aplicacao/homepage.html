@@ -30,9 +30,9 @@
 <!-- Sidebar oculta -->
 <div id="sidebar" class="sidebar">
     <span class="close-btn" onclick="fecharSidebar()">&times;</span>
-    <button class="sidebar-btn">Criar Receitas</button>
-    <button class="sidebar-btn">Acessar Receitas</button>
-    <button class="sidebar-btn">Historico Atendimento</button>
+    <a href="{% url 'gerar_receita' %}" class="sidebar-btn">Criar Receita</a>
+    <a href="{% url 'acessar_receitas' %}" class="sidebar-btn">Ver/Editar Modelos</a>
+    <a href="{% url 'historico_atendimento' %}" class="sidebar-btn">Histórico Atendimento</a>
 </div>
 
 

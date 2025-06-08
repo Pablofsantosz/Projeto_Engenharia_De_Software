@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from credenciamento.models import Usuario
 from django.contrib import messages
 from django.contrib.auth import authenticate, logout
+from .models import ReceitaTemplate, Consulta,CID
+from django.shortcuts import get_object_or_404
 
 
 def aplicacao_homepage(request):
@@ -81,3 +83,112 @@ def aplicacao_editar(request):
         return redirect('perfil')
 
     return render(request, 'aplicacao/editar_perfil.html', {'usuario': usuario})
+
+
+
+
+
+@login_required
+def acessar_receitas(request):
+    cids_com_templates = CID.objects.prefetch_related('templates').filter(templates__isnull=False).distinct()
+    return render(request, 'aplicacao/acessar_receitas.html', {'cids_com_templates': cids_com_templates})
+
+@login_required
+def detalhe_receita(request, template_id):
+    template = get_object_or_404(ReceitaTemplate, id=template_id)
+    if request.method == 'POST':
+        template.titulo = request.POST.get('titulo')
+        template.medicamentos = request.POST.get('medicamentos')
+        template.orientacoes_gerais = request.POST.get('orientacoes_gerais')
+        template.save()
+        messages.success(request, 'Receituário atualizado com sucesso!')
+        return redirect('detalhe_receita', template_id=template.id)
+    return render(request, 'aplicacao/detalhe_receita.html', {'template': template})
+
+@login_required
+def imprimir_receita(request, template_id):
+    template = get_object_or_404(ReceitaTemplate, id=template_id)
+    if request.method == 'POST':
+        paciente_nome = request.POST.get('paciente_nome')
+        paciente_cpf = request.POST.get('paciente_cpf')
+        sintomas = request.POST.get('sintomas')
+
+        # === AQUI A MÁGICA ACONTECE ===
+        # Cria o registro da consulta no banco de dados, associado ao médico (request.user)
+        Consulta.objects.create(
+            medico=request.user,
+            paciente_nome=paciente_nome,
+            paciente_cpf=paciente_cpf,
+            sintomas=sintomas,
+            cid_aplicado=template.cid
+        )
+        # ===============================
+
+        medico_profile = get_object_or_404(Usuario, email=request.user.email)
+        context = {
+            'template': template,
+            'paciente_nome': paciente_nome,
+            'paciente_cpf': paciente_cpf,
+            'medico': medico_profile,
+        }
+        return render(request, 'aplicacao/receita_final.html', context)
+    return render(request, 'aplicacao/form_impressao.html', {'template': template})
+
+@login_required
+def historico_atendimento(request):
+    # Filtra as consultas para mostrar APENAS as do médico logado (request.user)
+    consultas = Consulta.objects.filter(medico=request.user).order_by('-data_consulta')
+    context = {
+        'consultas': consultas
+    }
+    return render(request, 'aplicacao/historico_atendimento.html', context)
+
+
+
+
+@login_required
+def gerar_receita(request):
+    """
+    Página com um formulário único para gerar uma receita para um paciente.
+    """
+    if request.method == 'POST':
+        # 1. Coletar dados do formulário
+        template_id = request.POST.get('template')
+        paciente_nome = request.POST.get('paciente_nome')
+        paciente_cpf = request.POST.get('paciente_cpf')
+        paciente_idade = request.POST.get('paciente_idade')
+        paciente_peso = request.POST.get('paciente_peso')
+        sintomas = request.POST.get('sintomas')
+
+        # 2. Obter os objetos do banco de dados
+        template = get_object_or_404(ReceitaTemplate, id=template_id)
+        medico_profile = get_object_or_404(Usuario, email=request.user.email)
+
+        # 3. Salvar a consulta no histórico
+        Consulta.objects.create(
+            medico=request.user,
+            paciente_nome=paciente_nome,
+            paciente_cpf=paciente_cpf,
+            paciente_idade=paciente_idade,
+            paciente_peso=paciente_peso,
+            sintomas=sintomas,
+            cid_aplicado=template.cid
+        )
+
+        # 4. Preparar dados e renderizar a página final de impressão
+        context = {
+            'template': template,
+            'paciente_nome': paciente_nome,
+            'paciente_cpf': paciente_cpf,
+            'medico': medico_profile,
+        }
+        return render(request, 'aplicacao/receita_final.html', context)
+
+    # Se o método for GET, apenas exibe o formulário
+    else:
+        # Carrega todos os templates para usar no formulário
+        templates = ReceitaTemplate.objects.all().order_by('cid__codigo', 'titulo')
+        context = {
+            'templates': templates
+        }
+        return render(request, 'aplicacao/gerar_receita.html', context)

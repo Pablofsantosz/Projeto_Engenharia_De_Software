@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dados do Paciente</title>
+</head>
+<style>
+    body { font-family: sans-serif; background-color: #f4f4f9; padding: 20px; }
+    .container { max-width: 600px; margin: auto; background: #fff; padding: 30px; border-radius: 8px; }
+    h1 { color: #00796b; }
+    label { font-weight: bold; margin-top: 15px; display: block; }
+    input, textarea { width: 100%; padding: 8px; margin-top: 5px; border-radius: 4px; border: 1px solid #ccc; }
+    .btn { padding: 10px 20px; border: none; border-radius: 5px; color: white; cursor: pointer; background-color: #00796b; }
+</style>
+<body>
+    <div class="container">
+        <h1>Informações do Paciente</h1>
+        <p>Preencha os dados abaixo para gerar o receituário para <strong>{{ template.titulo }}</strong>.</p>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="paciente_nome">Nome do Paciente:</label>
+            <input type="text" name="paciente_nome" required>
+
+            <label for="paciente_cpf">CPF do Paciente:</label>
+            <input type="text" name="paciente_cpf" required>
+            
+            <label for="sintomas">Sintomas Observados:</label>
+            <textarea name="sintomas" required></textarea>
+
+            <br><br>
+            <button type="submit" class="btn">Gerar e Imprimir Receita</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Modelos de Receituário</title>
+    <style>
+        body { 
+            font-family: sans-serif; 
+            background-color: #f4f4f9; padding: 20px; }
+        .container { max-width: 900px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; }
+        .cid-group { margin-bottom: 25px; }
+        .cid-header { background-color: #00796b; color: white; padding: 10px; border-radius: 5px; }
+        .template-link { display: block; padding: 10px; border-bottom: 1px solid #ddd; text-decoration: none; color: #333; }
+        .template-link:hover { background-color: #f0f0f0; }
+        a.btn-voltar { display: inline-block; margin-top: 20px; padding: 10px 15px; background: #00796b; color: white; text-decoration: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Modelos de Receituário por CID</h1>
+        {% for cid in cids_com_templates %}
+            <div class="cid-group">
+                <h2 class="cid-header">{{ cid.codigo }} - {{ cid.descricao }}</h2>
+                {% for template in cid.templates.all %}
+                    <a href="{% url 'detalhe_receita' template.id %}" class="template-link">{{ template.titulo }}</a>
+                {% endfor %}
+            </div>
+        {% empty %}
+            <p>Nenhum modelo de receituário encontrado. Adicione alguns no painel de administração.</p>
+        {% endfor %}
+        <a href="{% url 'homepage' %}" class="btn-voltar">Voltar para a Homepage</a>
+    </div>
+</body>
+</html>
