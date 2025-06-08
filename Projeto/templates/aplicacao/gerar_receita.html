@@ -5,72 +5,90 @@
     <title>Gerar Novo Receituário</title>
     <style>
         body { font-family: sans-serif; background-color: #f4f4f9; padding: 20px; }
-        .container { max-width: 800px; margin: auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        h1 { color: #00796b; border-bottom: 2px solid #00796b; padding-bottom: 10px; }
-        .form-group { margin-bottom: 15px; }
+        .container { max-width: 800px; margin: auto; background: #fff; padding: 30px; border-radius: 8px; }
+        h1, h3 { color: #00796b; }
         label { font-weight: bold; display: block; margin-bottom: 5px; }
-        input[type="text"], select, textarea {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            box-sizing: border-box; /* Important */
-        }
-        textarea { height: 80px; }
+        input[type="text"], select, textarea { width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; }
+        textarea { height: 120px; }
         .btn { padding: 12px 25px; border: none; border-radius: 5px; color: white; background-color: #00796b; cursor: pointer; font-size: 16px; }
-        .btn:hover { background-color: #005f56; }
+        .form-group { margin-bottom: 15px; }
         .row { display: flex; gap: 20px; }
         .col { flex: 1; }
-        a.btn-voltar { display: inline-block; margin-top: 20px; padding: 10px 15px; background: #00796b; color: white; text-decoration: none; border-radius: 5px; }
+        .checkbox-group { margin-top: 20px; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Gerar Novo Receituário</h1>
-        <form method="POST">
+        <form method="POST" id="form-receita">
             {% csrf_token %}
 
             <div class="form-group">
-                <label for="template">Selecione o Modelo de Receita (baseado no CID):</label>
-                <select name="template" id="template" required>
-                    <option value="" disabled selected>-- Escolha um modelo --</option>
-                    {% for template in templates %}
-                        <option value="{{ template.id }}">
-                            [{{ template.cid.codigo }}] - {{ template.titulo }}
-                        </option>
+                <label for="template_select">1. Carregar um modelo (Opcional):</label>
+                <select id="template_select">
+                    <option value="">-- Começar com uma receita em branco --</option>
+                    <optgroup label="Modelos Gerais">
+                        {% for template in templates_gerais %}
+                            <option value="{{ template.id }}" data-type="geral">{{ template.titulo }}</option>
+                        {% endfor %}
+                    </optgroup>
+                    <optgroup label="Minhas Receitas Salvas">
+                         {% for receita in receitas_personalizadas %}
+                            <option value="{{ receita.id }}" data-type="personalizada">{{ receita.titulo_personalizado }}</option>
+                        {% endfor %}
+                    </optgroup>
+                </select>
+            </div>
+
+            <hr>
+
+            <h3>2. Detalhes da Receita (Editável)</h3>
+            
+            <div class="form-group">
+                <label for="cid_select">CID (Classificação Internacional de Doenças):</label>
+                <select name="cid_select" id="cid_select" required>
+                    <option value="" disabled selected>-- Selecione o CID da doença --</option>
+                    {% for cid in todos_os_cids %}
+                        <option value="{{ cid.id }}">{{ cid.codigo }} - {{ cid.descricao }}</option>
                     {% endfor %}
                 </select>
             </div>
 
-            <hr style="margin: 20px 0;">
+            <div class="form-group">
+                <label for="titulo">Título da Receita:</label>
+                <input type="text" name="titulo" id="titulo" required>
+            </div>
+            <div class="form-group">
+                <label for="medicamentos">Medicamentos e Prescrições:</label>
+                <textarea name="medicamentos" id="medicamentos" required></textarea>
+            </div>
+             <div class="form-group">
+                <label for="orientacoes">Orientações Gerais:</label>
+                <textarea name="orientacoes" id="orientacoes"></textarea>
+            </div>
+           
+            
+            <hr>
 
-            <h3>Dados do Paciente</h3>
+            <h3>3. Dados do Paciente</h3>
             <div class="form-group">
                 <label for="paciente_nome">Nome Completo:</label>
                 <input type="text" name="paciente_nome" required>
             </div>
-
             <div class="row">
                 <div class="col">
-                    <div class="form-group">
-                        <label for="paciente_cpf">CPF:</label>
-                        <input type="text" name="paciente_cpf" required>
-                    </div>
+                    <label for="paciente_cpf">CPF:</label>
+                    <input type="text" name="paciente_cpf" required>
                 </div>
                 <div class="col">
-                    <div class="form-group">
-                        <label for="paciente_idade">Idade:</label>
-                        <input type="text" name="paciente_idade">
-                    </div>
+                    <label for="paciente_idade">Idade:</label>
+                    <input type="text" name="paciente_idade">
                 </div>
                 <div class="col">
-                    <div class="form-group">
-                        <label for="paciente_peso">Peso (Kg):</label>
-                        <input type="text" name="paciente_peso">
-                    </div>
+                    <label for="paciente_peso">Peso (Kg):</label>
+                    <input type="text" name="paciente_peso">
                 </div>
             </div>
-
             <div class="form-group">
                 <label for="sintomas">Sintomas / Observações:</label>
                 <textarea name="sintomas" required></textarea>
@@ -78,7 +96,43 @@
 
             <button type="submit" class="btn">Gerar Receita para Impressão</button>
         </form>
-        <a href="{% url 'homepage' %}" class="btn-voltar">Voltar para a Homepage</a>
     </div>
+
+    <script>
+        // Dados dos templates passados pelo Django
+        const templatesGerais = {
+            {% for t in templates_gerais %}
+            "{{ t.id }}": { "cid_id": "{{ t.cid.id }}", "titulo": `{{ t.titulo|escapejs }}`, "medicamentos": `{{ t.medicamentos|escapejs }}`, "orientacoes": `{{ t.orientacoes_gerais|escapejs }}` },
+            {% endfor %}
+        };
+        const receitasPersonalizadas = {
+            {% for r in receitas_personalizadas %}
+            "{{ r.id }}": { "cid_id": "{{ r.cid.id }}", "titulo": `{{ r.titulo_personalizado|escapejs }}`, "medicamentos": `{{ r.medicamentos_personalizados|escapejs }}`, "orientacoes": `{{ r.orientacoes_personalizadas|escapejs }}` },
+            {% endfor %}
+        };
+
+        document.getElementById('template_select').addEventListener('change', function() {
+            const selectedId = this.value;
+            const selectedOption = this.options[this.selectedIndex];
+            const type = selectedOption.getAttribute('data-type');
+            let data;
+
+            if (type === 'geral') {
+                data = templatesGerais[selectedId];
+            } else if (type === 'personalizada') {
+                data = receitasPersonalizadas[selectedId];
+            }
+
+            if (data) {
+                // ATUALIZAÇÃO: Seleciona o CID no novo dropdown
+                document.getElementById('cid_select').value = data.cid_id;
+                document.getElementById('titulo').value = data.titulo;
+                document.getElementById('medicamentos').value = data.medicamentos;
+                document.getElementById('orientacoes').value = data.orientacoes;
+            } else {
+                document.getElementById('form-receita').reset();
+            }
+        });
+    </script>
 </body>
 </html>

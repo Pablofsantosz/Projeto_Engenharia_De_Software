@@ -158,11 +158,17 @@ def gerar_receita(request):
         paciente_peso = request.POST.get('paciente_peso')
         sintomas = request.POST.get('sintomas')
 
-        # Coletamos o texto que foi *efetivamente* usado, podendo ter sido modificado
-        cid_id = request.POST.get('cid_id')
+        # O CID agora vem do novo campo 'cid_select'
+        cid_id = request.POST.get('cid_select')
         titulo_usado = request.POST.get('titulo')
         medicamentos_usados = request.POST.get('medicamentos')
         orientacoes_usadas = request.POST.get('orientacoes')
+
+        # Verifica se um CID foi selecionado
+        if not cid_id:
+            messages.error(request, 'Erro: Você deve selecionar um CID para a receita.')
+            # Redireciona de volta com os dados já preenchidos (se possível)
+            return redirect('gerar_receita')
 
         # 2. Salvar a consulta no histórico
         Consulta.objects.create(
@@ -180,7 +186,7 @@ def gerar_receita(request):
         if salvar_personalizada:
             ReceitaPersonalizada.objects.create(
                 medico=request.user,
-                cid_id=cid_id,
+                cid_id=cid_id, # Usando o cid_id do novo campo
                 titulo_personalizado=titulo_usado,
                 medicamentos_personalizados=medicamentos_usados,
                 orientacoes_personalizadas=orientacoes_usadas
@@ -195,16 +201,22 @@ def gerar_receita(request):
             'paciente_cpf': paciente_cpf,
             'medico': medico_profile,
         }
-        # Nota: Ajuste a receita_final.html para usar 'medicamentos' e 'orientacoes'
         return render(request, 'aplicacao/receita_final_ajustada.html', context)
 
     # Se o método for GET
     else:
+        # Carrega todos os dados necessários para os formulários
         templates_gerais = ReceitaTemplate.objects.all().order_by('cid__codigo', 'titulo')
         receitas_medico = ReceitaPersonalizada.objects.filter(medico=request.user).order_by('titulo_personalizado')
+        todos_os_cids = CID.objects.all().order_by('codigo') # Buscando todos os CIDs
         
         context = {
             'templates_gerais': templates_gerais,
-            'receitas_personalizadas': receitas_medico
+            'receitas_personalizadas': receitas_medico,
+            'todos_os_cids': todos_os_cids, # Adicionando ao contexto
         }
         return render(request, 'aplicacao/gerar_receita.html', context)
+    
+    
+    
+    
