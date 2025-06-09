@@ -177,6 +177,7 @@ Durante o desenvolvimento do projeto, enfrentamos algumas dificuldades técnicas
 
 - **Aprendizado do framework Django**: Tivemos dificuldades iniciais no entendimento da estrutura do Django e na prática de suas convenções, especialmente na separação entre models, views e templates.
 - **Manipulação do banco de dados**: Foi desafiador compreender como o Django ORM funciona e como realizar as migrações corretamente sem corromper os dados.
+- **Funcionalidade**: Toda vez que atualizamos o modelo do receituário, aparece uma mensagem em excluir conta
 
 
 ### 🐛 Bug Encontrado - IDs não reutilizados
