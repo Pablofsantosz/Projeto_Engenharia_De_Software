@@ -225,6 +225,14 @@
   <li> <b>UH Gerar novo receituário:</b><br><br>
   <img src="Images/Gerar Novo Receituário.jpg" width="450" align="center" style="margin-top: 50px; margin-bottom: 30px;" alt="Novo Receituário"/>
   </li>
+    
+  
+   <br><br>
+   
+  <li> <b>UH Print do Receituário Criado:</b><br><br>
+  <img src="Images/Visualização do receituario2.jpg" width="600" align="center" style="margin-top: 100px; margin-bottom: 60px;" alt="Novo Receituário"/>
+  </li>
+  
 </ul>
 
 ---
