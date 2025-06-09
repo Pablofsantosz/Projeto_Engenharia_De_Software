@@ -131,8 +131,39 @@
 ---
 
 
-<h4> Diagramas de Atividade</h4>
- <img src="Images/diagrama-3requisitos.png" width="1000" align="center" style="margin-top: 50px; margin-bottom: 30px;" alt="Tela de cadastro"/>
+<h4>🗃️ Diagramas de Atividade</h4>
+
+<ul>
+  <li>  <b>Diagrama Login, Cadastro e Excluir conta:</b><br><br>
+  <img src="Images/diagrama-3requisitos.png" width="1000" align="center" style="margin-top: 50px; margin-bottom: 30px;" alt="Diagrama 1"/>
+  </li>
+
+  <br><br>
+
+  <li>  <b>Diagrama Editar dados do usuário:</b><br><br>
+  <img src="Images/Diagrama editar informações do usuário.jpg" width="300" align="center" style="margin-top: 50px; margin-bottom: 30px;" alt="Diagrama 2"/>
+  </li>
+  
+  <br><br>
+
+  <li>  <b>Diagrama Criar receituário carregando modelo ou em branco:</b><br><br>
+  <img src="Images/Diagramas criar receituario carregando modelo ou em branco.jpg" width="800" align="center" style="margin-top: 50px; margin-bottom: 30px;" alt="Diagrama 3"/>
+  </li>
+  
+  <br><br>  
+
+  <li>  <b>Diagrama Inserir nome, CPF, idade, peso e OBS do paciente:</b><br><br>
+  <img src="Images/Diagramas inserir dados do paciente.jpg" width="1000" align="center" style="margin-top: 50px; margin-bottom: 30px;" alt="Diagrama 4"/>
+  </li>
+  
+  <br><br>
+  
+  <li>  <b>Diagrama Visualizar modelos de preenchimento de receituario ou Histórico de consulta:</b><br><br>
+  <img src="Images/Diagramas visualizar modelos de preenchimentos de receituarios e historico de consultas.jpg" width="500" align="center" style="margin-top: 50px; margin-bottom: 30px;" alt="Diagrama 5"/>
+  </li>
+  
+  <br><br>
+</ul>
 
 ---
 
