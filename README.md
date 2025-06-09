@@ -122,7 +122,7 @@
 - Correções de bugs e testes de funcionalidade (Nunno e Pablo).
 - Implemetações: homepage, criar receituário, preencher com CPF, preencher com nome, preencher com peso, creiar modelo com preenchimento de modelo de receituário, editar informações, redefinir dados, gerar um receituário em branco, preencher com CID 10, logout da plataforma, imprimir receituário, gerar receituário preenchido. (Nunno, Pablo, Pedro, Malu)
 - Atualização do README (Nunno, Pablo, Pedro, Malu)
-- Tentativa de Deploy (Nunno, Pablo, Pedro, Malu)
+- Tentativa de Deploy (Nunno, Pablo, Pedro, Malu, Lucas)
 
 #
 
