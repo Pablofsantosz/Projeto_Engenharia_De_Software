@@ -209,6 +209,21 @@ Durante o desenvolvimento do projeto, enfrentamos algumas dificuldades técnicas
 - **Aprendizado do framework Django**: Tivemos dificuldades iniciais no entendimento da estrutura do Django e na prática de suas convenções, especialmente na separação entre models, views e templates.
 - **Manipulação do banco de dados**: Foi desafiador compreender como o Django ORM funciona e como realizar as migrações corretamente sem corromper os dados.
 - **Funcionalidade**: Toda vez que atualizamos o modelo do receituário, aparece uma mensagem em excluir conta
+-**Deploy**: tivemos uma enorme dificuldade em fazer o deploy pelos seguintes fatos:
+ - Trabalho muito extenso;
+ - Uso do SQLite;
+ - versão do python (python-3.12.1);
+ - ***Servidores que testamos***
+     - date space 
+     - pythonanywhere
+     - vercel
+     - replit
+     - fly
+     - railaway
+     - render
+     - Github
+   Utilizei todos esses caminhos para conseguir fazer o deploy,mas pelos motivos acima, não foi aceito.
+
 
 
 ### 🐛 Bug Encontrado - IDs não reutilizados
