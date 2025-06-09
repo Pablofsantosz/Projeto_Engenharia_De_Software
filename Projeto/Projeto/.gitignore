@@ -1,0 +1,11 @@
+# Ignorar arquivos de cache do Python
+__pycache__/
+*.pyc
+
+# Ignorar ambiente virtual
+venv/
+
+# Ignorar arquivos temporários e de build
+*.log
+*.sqlite3
+staticfiles/
