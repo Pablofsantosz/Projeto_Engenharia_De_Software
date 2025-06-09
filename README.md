@@ -199,6 +199,25 @@
   <li> <b>UH Confirmar Senha Para Excluir Conta:</b><br><br>
   <img src="Images/Tela inserir senha para excluir conta.png" width="450" align="center" style="margin-top: 50px; margin-bottom: 30px;" alt="Tela de inputar senha para exclusão da conta"/>
   </li>
+
+   <br><br>
+   
+  <li> <b>UH Home Page:</b><br><br>
+  <img src="Images/Tela homepage.png" width="450" align="center" style="margin-top: 50px; margin-bottom: 30px;" alt="tela de home page"/>
+  </li>
+
+   <br><br>
+   
+  <li> <b>UH Histórico de Consulta:</b><br><br>
+  <img src="Images/Visualizar historico de consultas.jpg" width="450" align="center" style="margin-top: 50px; margin-bottom: 30px;" alt="tela que vizualiza o histórico de consulta"/>
+  </li>
+
+  
+   <br><br>
+   
+  <li> <b>UH Histórico de Consulta:</b><br><br>
+  <img src="Images/Visualizar historico de consultas.jpg" width="450" align="center" style="margin-top: 50px; margin-bottom: 30px;" alt="tela que vizualiza o histórico de consulta"/>
+  </li>
 </ul>
 
 ---
