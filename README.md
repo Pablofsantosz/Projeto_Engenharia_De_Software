@@ -178,7 +178,7 @@
 
 2. O vídeo abaixo apresenta a demonstração das funcionalidades implementadas:
 
-   <a href="https://www.youtube.com/watch?v=CYxsg9Gxl5c"><img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" alt="ScreenCast" /></a>
+   <a href="https://www.youtube.com/watch?v=m5BIkN4cZ7Q"><img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" alt="ScreenCast" /></a>
   </p>
 
 <h3>Funcionalidades demonstradas:</h3>
@@ -215,8 +215,15 @@
   
    <br><br>
    
-  <li> <b>UH Histórico de Consulta:</b><br><br>
-  <img src="Images/Visualizar historico de consultas.jpg" width="450" align="center" style="margin-top: 50px; margin-bottom: 30px;" alt="tela que vizualiza o histórico de consulta"/>
+  <li> <b>UH Modelos receituário CID_10:</b><br><br>
+  <img src="Images/Modelo receituário CID_10.jpg" width="450" align="center" style="margin-top: 50px; margin-bottom: 30px;" alt="Modelo pré preenchidos"/>
+  </li>
+  
+  
+   <br><br>
+   
+  <li> <b>UH Gerar novo receituário:</b><br><br>
+  <img src="Images/Gerar Novo Receituário.jpg" width="450" align="center" style="margin-top: 50px; margin-bottom: 30px;" alt="Novo Receituário"/>
   </li>
 </ul>
 
