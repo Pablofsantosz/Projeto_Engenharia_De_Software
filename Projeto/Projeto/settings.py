@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-_n-f!o_kk5&&mqn))@^3yd4!ow-1!(oap#5gx+$!%qclm(bh)6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-APP_NAME = os.environ.get("FastRx")
-ALLOWED_HOSTS = [f"{APP_NAME}.fly.dev"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
