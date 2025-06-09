@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-_n-f!o_kk5&&mqn))@^3yd4!ow-1!(oap#5gx+$!%qclm(bh)6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+APP_NAME = os.environ.get("FastRx")
+ALLOWED_HOSTS = [f"{APP_NAME}.fly.dev"]
 
 
 # Application definition
