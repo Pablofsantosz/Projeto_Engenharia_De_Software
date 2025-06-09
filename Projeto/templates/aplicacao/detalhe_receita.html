@@ -20,6 +20,21 @@
 <body>
     <div class="container">
         <h1>Editar: {{ template.titulo }}</h1>
+        <body>
+    <div class="container">
+        <h1>Editar: {{ template.titulo }}</h1>
+
+        {% if messages %}
+            <div style="padding: 10px; margin-bottom: 15px; background-color: #d4edda; color: #155724; border-radius: 5px;">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        {% endif %}
+        <form method="POST">
+            {% csrf_token %}
+            ```
+            
         <form method="POST">
             {% csrf_token %}
             <label for="titulo">Título do Modelo:</label>
