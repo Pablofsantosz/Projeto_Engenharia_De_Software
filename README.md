@@ -25,8 +25,8 @@
   <h1 align="center">🩺 Sistema de Receituário - UPA Emergência Pediátrica<p> </p></h1>
 
 <div align="center">
-  <img src="Images/Tela de login.png" width="425" />
-  <img src="Images/Tela homepage.png" width="390" />
+  <img src="Images/Tela de login.png" width="400" />
+  <img src="Images/Tela homepage.png" width="365" />
 </div>
 
 <br>
